@@ -1,0 +1,53 @@
+.software-skills {
+  padding: 24px;
+}
+
+.software-category {
+  margin-bottom: 24px;
+}
+
+.software-category:last-child {
+  margin-bottom: 0;
+}
+
+.category-title {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.software-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.software-tag {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.software-tag.intermediate {
+  background: rgba(108, 117, 125, 0.1);
+  color: #9ca3af;
+}
+
+.software-tag.advanced {
+  background: rgba(80, 70, 229, 0.1);
+  color: var(--primary);
+}
+
+.software-tag.professional {
+  background: rgba(255, 124, 69, 0.1);
+  color: var(--accent);
+}
+
+.software-tag:hover {
+  transform: translateY(-2px);
+} 

@@ -1,0 +1,72 @@
+.about-section {
+  padding: 24px;
+}
+
+.about-content {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.about-content p {
+  margin-bottom: 16px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  margin: 16px 0;
+}
+
+.skills-list li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.skills-list li:hover {
+  background: rgba(80, 70, 229, 0.15);
+  transform: translateY(-2px);
+}
+
+.personal-projects, .ux-ui-designs {
+  margin-top: 24px;
+}
+
+.personal-projects h3, .ux-ui-designs h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.personal-projects ul, .ux-ui-designs ul {
+  list-style: none;
+}
+
+.personal-projects li, .ux-ui-designs li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.personal-projects li:before, .ux-ui-designs li:before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.personal-projects a, .ux-ui-designs a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.personal-projects a:hover, .ux-ui-designs a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+} 
