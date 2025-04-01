@@ -13,7 +13,7 @@ const UxUiSection = () => {
       title: 'Bulgari',
       description: 'Rediseño de la experiencia de usuario para la tienda online de la marca de lujo.',
       tech: ['Figma', 'UX Research', 'Prototipado', 'User Testing'],
-      link: '#',
+      link: 'https://www.figma.com/proto/trUqjo2lR2L4imHRq2zdxg/BULGARI?type=design&node-id=2-104&t=Njlt4884jBwx21Vo-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=4%3A2',
       year: '2023',
       image: bulgariImage,
       className: 'bulgari-image'
@@ -23,7 +23,7 @@ const UxUiSection = () => {
       title: 'Burger Bots',
       description: 'Aplicación móvil para cadena de restaurantes con sistema de pedidos automatizado.',
       tech: ['Adobe XD', 'UI Design', 'Mobile First', 'User Testing'],
-      link: '#',
+      link: 'https://xd.adobe.com/view/5f9f6f8d-9cda-47aa-89fb-b1e02c8d84dd-0acc/?fullscreen&hints=off',
       year: '2022',
       image: burgerBotsImage,
       className: 'burger-bots-image'
