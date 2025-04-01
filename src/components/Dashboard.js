@@ -1,58 +1,51 @@
 import React from 'react';
-import './Dashboard.css';
-import AboutSection from './AboutSection';
-import SkillsSection from './SkillsSection';
+import './DashboardNew.css';
 import ProjectsSection from './ProjectsSection';
-import ExperienceSection from './ExperienceSection';
+import UxUiSection from './UxUiSection';
+import SkillsSection from './SkillsSection';
+import SoftwareSkills from './SoftwareSkills';
+import ContactSection from './ContactSection';
 
 const Dashboard = () => {
   return (
     <div className="dashboard">
-      <header className="header glass-card">
+      <header id="about" className="header glass-card">
         <div className="header-content">
-          <h1>Tobías Etchelet</h1>
+          <h1>Tobias Etchelet</h1>
           <p className="subtitle">
-            Diseñador Web con más de 10 años de experiencia, especializado en
-            <span className="highlight"> Diseño UI/UX</span> y
-            <span className="accent"> Desarrollo Web</span>
+            Diseñador Web y UX/UI con más de 12 años de experiencia creando interfaces
+            funcionales y atractivas. Especializado en diseño centrado en el usuario y desarrollo frontend.
           </p>
         </div>
       </header>
 
-      <section id="about">
-        <AboutSection />
-      </section>
+      <div className="content-grid">
+        <div className="main-content">
+          {/* Sección de Habilidades */}
+          <section id="skills">
+            <SkillsSection />
+          </section>
 
-      <section id="skills">
-        <SkillsSection />
-      </section>
+          {/* Sección de Software */}
+          <section id="software">
+            <SoftwareSkills />
+          </section>
 
-      <section id="portfolio">
-        <ProjectsSection />
-      </section>
+          {/* Sección de Proyectos Web */}
+          <section id="projects">
+            <ProjectsSection />
+          </section>
 
-      <section id="experience">
-        <ExperienceSection />
-      </section>
-
-      <section id="contact" className="contact-section glass-card">
-        <h2 className="section-title">Contacto</h2>
-        <p className="contact-description">
-          ¿Interesado en trabajar juntos? Ponete en contacto conmigo a través de los siguientes medios:
-        </p>
-        <div className="contact-info">
-          <div className="contact-item">
-            <strong>Email:</strong>
-            <a href="mailto:tobiasetchelet@gmail.com">tobiasetchelet@gmail.com</a>
-          </div>
-          <div className="contact-item">
-            <strong>LinkedIn:</strong>
-            <a href="https://www.linkedin.com/in/tob%C3%ADas-etchelet-66350575/" target="_blank" rel="noopener noreferrer">
-              Tobías Etchelet
-            </a>
-          </div>
+          {/* Sección de Diseños UX/UI */}
+          <section id="uxui">
+            <UxUiSection />
+          </section>
         </div>
-      </section>
+
+        <div className="right-column">
+          <ContactSection />
+        </div>
+      </div>
     </div>
   );
 };

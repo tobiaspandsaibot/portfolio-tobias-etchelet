@@ -1,8 +1,31 @@
+:root {
+  --primary: #5D54C7;
+  --accent: #FF7C45;
+  --accent-hover: #ff6c28;
+  --bg: #0F0F1A;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #FFFFFF;
+  --text-secondary: #9a9aaf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
 .app {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  z-index: 1;
+  background-color: var(--bg);
 }
 
 .gradient-bg {
@@ -29,9 +52,10 @@
 
 .dashboard-container {
   display: grid;
-  grid-template-columns: 250px 1fr 320px;
+  grid-template-columns: 280px minmax(0, 1fr);
   gap: 24px;
-  padding: 24px;
+  padding: 12px;
+    min-height: 100vh;
   max-width: 1920px;
   margin: 0 auto;
 }
@@ -70,15 +94,58 @@
   color: var(--accent);
 }
 
-/* Responsive */
+/* Media queries */
+@media (max-width: 1400px) {
+  .dashboard-container {
+    grid-template-columns: 280px minmax(0, 1fr);
+  }
+}
 @media (max-width: 1200px) {
   .dashboard-container {
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
   .dashboard-container {
-    grid-template-columns: 1fr;
-  }
+    padding: 8px;
+      gap: 16px;
+    }
+    }
+    
+    @media (max-width: 480px) {
+      .dashboard-container {
+        padding: 4px;
+        gap: 12px;
+      }
+    }
+    
+    /* VR Mode */
+    .app.vr-mode {
+      background: #000;
+    }
+    
+    .app.vr-mode::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .app.vr-mode {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    .vr-mode {
+      overflow: hidden;
+    }
+    
+    .vr-mode .dashboard-container {
+      transform: perspective(1000px) rotateX(10deg);
+    }
+    
+    .vr-mode .glass-card {
+      transform: translateZ(20px);
+      transition: transform 0.3s ease;
+    }
+.vr-mode .glass-card:hover {
+  transform: translateZ(40px);
 } 

@@ -2,6 +2,22 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  height: calc(100vh - 24px);
+    position: sticky;
+    top: 12px;
+  }
+  
+  .right-panel .glass-card {
+    padding: 20px;
+  }
+  
+  .right-panel h3 {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+  }
+  
+  .right-panel p {
+    color: var(--text-secondary);
 }
 
 @media (max-width: 1200px) {

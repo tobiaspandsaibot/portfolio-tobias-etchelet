@@ -95,8 +95,174 @@
   margin-left: 6px;
 }
 
+.project-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.project-image img {
+  width: auto;
+  max-width: 90%;
+  height: auto;
+  max-height: 90%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Imágenes específicas para los proyectos de UX/UI que sí deben expandirse y recortarse */
+.bulgari-image,
+.burger-bot-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Contenedor específico para imágenes UX/UI */
+.uxui-project-image {
+  padding: 0 !important;
+  height: 200px !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* Asegurar que solo las imágenes UX/UI se expandan */
+.uxui-project-card:hover .uxui-project-image img {
+  transform: scale(1.05);
+}
+
+/* Evitar que algunas imágenes específicas se expandan */
+.project-card:hover .project-image .jardin-image,
+.project-card:hover .project-image .soluciones-image,
+.project-card:hover .project-image .neorelax-image {
+  transform: none;
+}
+
+/* Imágenes específicas para los proyectos web que no deben expandirse */
+.jardin-image {
+  width: auto;
+  max-width: 85%;
+  height: auto;
+  max-height: 85%;
+  object-fit: contain;
+  transition: none;
+}
+
+.soluciones-image {
+  width: auto;
+  max-width: 85%;
+  height: auto;
+  max-height: 85%;
+  object-fit: contain;
+  transition: none;
+}
+
+.neorelax-image {
+  width: auto;
+  max-width: 85%;
+  height: auto;
+  max-height: 75%;
+  object-fit: contain;
+  transition: none;
+}
+
+/* Altura específica para el contenedor de la imagen de Neorelax */
+.project-card:nth-child(3) .project-image {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+}
+
+/* Mobile Large */
 @media (max-width: 768px) {
+  .projects-section {
+      padding: 20px;
+    }
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+      margin-top: 20px;
+    }
+    
+    .project-content {
+      padding: 16px;
+    }
+    
+    .project-title {
+      font-size: 1.1rem;
+    }
+    
+    .project-image {
+      height: 160px;
+    }
+    }
+    
+    /* Mobile Small */
+    @media (max-width: 480px) {
+      .projects-section {
+        padding: 16px;
+      }
+    
+      .projects-grid {
+        gap: 12px;
+        margin-top: 16px;
+      }
+    
+      .project-content {
+        padding: 12px;
+      }
+    
+      .project-title {
+        font-size: 1rem;
+      }
+    
+      .project-description {
+        font-size: 0.9rem;
+      }
+    
+      .tech-tag {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+      }
+    
+      .project-footer {
+        padding: 12px 16px;
+      }
+    
+      .project-link {
+        font-size: 0.85rem;
+      }
+    
+      .project-image {
+        height: 140px;
   }
-} 
+}

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tobías Etchelet - Portfolio Completo</title>
+    <style>
+        :root {
+            --primary: #5D54C7;
+            --accent: #FF7C45;
+            --accent-hover: #ff6c28;
+            --bg: #0F0F1A;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-primary: #FFFFFF;
+            --text-secondary: #9a9aaf;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 12px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .gradient-bg {
+            position: fixed;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        .top-left {
+            top: -20vw;
+            left: -20vw;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+        }
+
+        .bottom-right {
+            bottom: -20vw;
+            right: -20vw;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+        }
+
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 24px;
+            padding: 12px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            height: calc(100vh - 24px);
+            position: sticky;
+            top: 12px;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 16px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .profile h2 {
+            font-size: 1.25rem;
+            margin-bottom: 4px;
+        }
+
+        .profile p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 12px;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .sidebar-nav a:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .header {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Estilos para las secciones */
+        section {
+            margin-bottom: 24px;
+        }
+
+        section h2 {
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Estilos para proyectos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 180px;
+            background: #222;
+            position: relative;
+        }
+
+        .project-content {
+            padding: 16px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            background: rgba(93, 84, 199, 0.2);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-link:hover {
+            opacity: 0.9;
+        }
+
+        /* Estilos para la sección de habilidades */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .skill-icon {
+            margin-bottom: 12px;
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        /* Estilos para la sección de contacto */
+        .contact-form {
+            display: grid;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 12px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                height: auto;
+                position: static;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gradient-bg top-left"></div>
+    <div class="gradient-bg bottom-right"></div>
+
+    <a href="index.html" class="back-btn">← Volver al inicio</a>
+
+    <div class="dashboard-container">
+        <div class="sidebar glass-card">
+            <div class="profile">
+                <div class="avatar"></div>
+                <h2>Tobias Etchelet</h2>
+                <p>Diseñador Web & UX/UI</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#uxui">UX/UI</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="dashboard">
+            <header id="about" class="header glass-card">
+                <h1>Tobias Etchelet</h1>
+                <p class="subtitle">Diseñador Web y UX/UI con más de 10 años de experiencia creando interfaces
+                    funcionales y atractivas. Especializado en diseño centrado en el usuario y desarrollo frontend.</p>
+            </header>
+
+            <!-- Sección de Habilidades -->
+            <section id="skills" class="glass-card">
+                <h2>Habilidades</h2>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <div class="skill-icon">💻</div>
+                        <div class="skill-name">HTML5 & CSS3</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🔧</div>
+                        <div class="skill-name">JavaScript</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">⚛️</div>
+                        <div class="skill-name">React</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <div class="skill-name">Figma</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🖌️</div>
+                        <div class="skill-name">Adobe XD</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">📱</div>
+                        <div class="skill-name">Diseño Responsive</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Proyectos Web -->
+            <section id="projects" class="glass-card">
+                <h2>Proyectos Web</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img" style="background: url('fallback.jpg') center/cover;"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Diseño Web para Jardín Botánico</h3>
+                            <p class="project-desc">Diseño y desarrollo de sitio web informativo con sistema de reservas
+                                para visitas guiadas.</p>
+                            <div class="project-tags">
+                                <span class="tag">WordPress</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <a href="#" class="project-link">Ver proyecto</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img" style="background: url('fallback.jpg') center/cover;"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Neorelax</h3>
+                            <p class="project-desc">Plataforma web para servicios de relajación y terapias alternativas.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">SASS</span>
+                                <span class="tag">React</span>
+                            </div>
+                            <a href="#" class="project-link">Ver proyecto</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img" style="background: url('fallback.jpg') center/cover;"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Soluciones Tecnológicas</h3>
+                            <p class="project-desc">Sitio web corporativo para empresa de servicios tecnológicos con
+                                sistema de tickets.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                            <a href="#" class="project-link">Ver proyecto</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Diseños UX/UI -->
+            <section id="uxui" class="glass-card">
+                <h2>Diseños UX/UI</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img" style="background: url('fallback.jpg') center/cover;"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Bulgari</h3>
+                            <p class="project-desc">Rediseño de la experiencia de usuario para la tienda online de la
+                                marca de lujo.</p>
+                            <div class="project-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">UX Research</span>
+                                <span class="tag">Prototipado</span>
+                            </div>
+                            <a href="#" class="project-link">Ver proyecto</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img" style="background: url('fallback.jpg') center/cover;"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Burger Bots</h3>
+                            <p class="project-desc">Aplicación móvil para cadena de restaurantes con sistema de pedidos
+                                automatizado.</p>
+                            <div class="project-tags">
+                                <span class="tag">Adobe XD</span>
+                                <span class="tag">UI Design</span>
+                                <span class="tag">User Testing</span>
+                            </div>
+                            <a href="#" class="project-link">Ver proyecto</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Contacto -->
+            <section id="contact" class="glass-card">
+                <h2>Contacto</h2>
+                <p style="margin-bottom: 20px; color: var(--text-secondary);">¿Interesado en trabajar juntos? ¡Completa
+                    el formulario y me pondré en contacto contigo!</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" placeholder="¿En qué puedo ayudarte?"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar mensaje</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Script básico para la navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

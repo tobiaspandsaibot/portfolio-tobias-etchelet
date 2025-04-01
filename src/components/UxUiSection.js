@@ -1,47 +1,38 @@
 import React from 'react';
-import './ProjectsSection.css';
+import './UxUiSection.css';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-import project1Image from '../assets/project1.jpg';
-import project2Image from '../assets/project2.jpg';
-import project3Image from '../assets/Logo-Neorelax-2048x695-1.png';
 
-const ProjectsSection = () => {
+// Importar imágenes (asegúrate de que existan en la carpeta assets)
+import bulgariImage from '../assets/bulgari.png';
+import burgerBotsImage from '../assets/burger-bot.png';
+
+const UxUiSection = () => {
   const projects = [
     {
       id: 1,
-      title: 'El Jardín de la Plaza',
-      description: 'Diseño y desarrollo de sitio web para escuela de jardín de infantes',
-      tech: ['WordPress', 'Elementor', 'CSS', 'Responsive Design'],
-      link: 'https://eljardindelaplaza.edu.ar/',
+      title: 'Bulgari',
+      description: 'Rediseño de la experiencia de usuario para la tienda online de la marca de lujo.',
+      tech: ['Figma', 'UX Research', 'Prototipado', 'User Testing'],
+      link: '#',
       year: '2023',
-      image: project1Image,
-      className: 'jardin-image'
+      image: bulgariImage,
+      className: 'bulgari-image'
     },
     {
       id: 2,
-      title: 'Soluciones Gastronómicas',
-      description: 'E-commerce para venta de productos gastronómicos',
-      tech: ['WordPress', 'WooCommerce', 'JavaScript', 'UI/UX Design'],
-      link: 'https://sgastronomicas.com.ar/',
+      title: 'Burger Bots',
+      description: 'Aplicación móvil para cadena de restaurantes con sistema de pedidos automatizado.',
+      tech: ['Adobe XD', 'UI Design', 'Mobile First', 'User Testing'],
+      link: '#',
       year: '2022',
-      image: project2Image,
-      className: 'soluciones-image'
-    },
-    {
-      id: 3,
-      title: 'Neorelax',
-      description: 'Tienda online de productos de relajación y bienestar',
-      tech: ['WordPress', 'WooCommerce', 'CSS', 'Payment Gateway'],
-      link: 'https://neorelax.com.ar/',
-      year: '2022',
-      image: project3Image,
-      className: 'neorelax-image'
+      image: burgerBotsImage,
+      className: 'burger-bots-image'
     }
   ];
 
   return (
-    <section className="projects-section">
-      <h2>Proyectos</h2>
+    <section className="uxui-section">
+      <h2>Diseños UX/UI</h2>
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.id} className="project-card glass-card">
@@ -74,4 +65,4 @@ const ProjectsSection = () => {
   );
 };
 
-export default ProjectsSection; 
+export default UxUiSection; 

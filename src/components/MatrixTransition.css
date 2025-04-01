@@ -1,0 +1,42 @@
+.matrix-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+.matrix-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.matrix-transition.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}

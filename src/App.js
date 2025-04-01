@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
-import RightPanel from './components/RightPanel';
 
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
       <div className="dashboard-container">
         <Sidebar />
         <Dashboard />
-        <RightPanel />
       </div>
     </div>
   );

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - Portfolio Tobías</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0F0F1A;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            color: #5D54C7;
+        }
+
+        h2 {
+            color: #FF7C45;
+            margin-top: 30px;
+        }
+
+        code {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        button {
+            background-color: #5D54C7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #4E46B8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Diagnóstico - Portfolio Tobías</h1>
+        <p>Esta es una página de diagnóstico para verificar que el servidor web está funcionando correctamente.</p>
+
+        <h2>Pasos para solucionar el problema:</h2>
+        <ol>
+            <li>Verifica que la estructura de archivos está correcta</li>
+            <li>Asegúrate de que no hay errores de sintaxis en los archivos CSS</li>
+            <li>Revisa las consolas de navegador para ver errores de JavaScript</li>
+            <li>Intenta ejecutar <code>npm run build</code> para ver errores de compilación</li>
+            <li>Si es necesario, crea un nuevo proyecto React y copia los componentes uno por uno</li>
+        </ol>
+
+        <h2>Información del proyecto:</h2>
+        <ul>
+            <li>Ruta: <code id="path">No disponible</code></li>
+            <li>Navegador: <code id="browser">No disponible</code></li>
+            <li>Fecha: <code id="date">No disponible</code></li>
+        </ul>
+
+        <button onclick="location.href='/'">Ir a la página principal</button>
+    </div>
+
+    <script>
+        document.getElementById('path').textContent = window.location.pathname;
+        document.getElementById('browser').textContent = navigator.userAgent;
+        document.getElementById('date').textContent = new Date().toLocaleString();
+    </script>
+</body>
+
+</html>

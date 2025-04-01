@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tobías Etchelet - Inicio</title>
+    <style>
+        :root {
+            --primary: #5D54C7;
+            --accent: #FF7C45;
+            --accent-hover: #ff6c28;
+            --bg: #0F0F1A;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-primary: #FFFFFF;
+            --text-secondary: #9a9aaf;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .app {
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            z-index: 1;
+            padding: 12px;
+        }
+
+        .gradient-bg {
+            position: fixed;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        .top-left {
+            top: -20vw;
+            left: -20vw;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+        }
+
+        .bottom-right {
+            bottom: -20vw;
+            right: -20vw;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+        }
+
+        .dashboard-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .glass-card {
+            max-width: 600px;
+            padding: 50px;
+            text-align: center;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .btn-ingresar {
+            display: inline-block;
+            padding: 12px 40px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(93, 84, 199, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-ingresar:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(93, 84, 199, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="gradient-bg top-left"></div>
+        <div class="gradient-bg bottom-right"></div>
+
+        <div class="dashboard-container">
+            <div class="glass-card">
+                <h1>Tobias Etchelet</h1>
+                <p>Diseñador Web y UX/UI</p>
+                <a href="portfolio.html" class="btn-ingresar">Ingresar</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

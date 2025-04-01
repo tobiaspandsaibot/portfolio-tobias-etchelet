@@ -15,9 +15,81 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Tobías Etchelet - Portfolio</title>
+    <style>
+      :root {
+        --primary: #5D54C7;
+        --accent: #FF7C45;
+        --accent-hover: #ff6c28;
+        --bg: #0F0F1A;
+        --card-bg: rgba(255, 255, 255, 0.05);
+        --card-border: rgba(255, 255, 255, 0.1);
+        --text-primary: #FFFFFF;
+        --text-secondary: #9a9aaf;
+      }
+    
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    
+      body {
+        font-family: 'Inter', Arial, sans-serif;
+        background-color: var(--bg);
+        color: var(--text-primary);
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+      }
+    
+      #root {
+        min-height: 100vh;
+      }
+    
+      #error-display {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 0, 0, 0.8);
+        color: white;
+        padding: 20px;
+        font-family: monospace;
+        z-index: 9999;
+        max-height: 50vh;
+        overflow: auto;
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <noscript>Necesitas habilitar JavaScript para ver este sitio.</noscript>
     <div id="root"></div>
+    <div id="error-display"></div>
+    
+    <script>
+      // Captura errores globales
+      window.onerror = function (message, source, lineno, colno, error) {
+        var errorLog = document.getElementById('error-display');
+        if (errorLog) {
+          errorLog.style.display = 'block';
+          errorLog.innerHTML += '<p><strong>Error:</strong> ' + message + '<br>' +
+            '<strong>Archivo:</strong> ' + source + '<br>' +
+            '<strong>Línea:</strong> ' + lineno + '</p>';
+        }
+        console.error(message, source, lineno, colno, error);
+        return false;
+      };
+
+      // También capturar errores de promesas no manejadas
+      window.addEventListener('unhandledrejection', function (event) {
+        var errorLog = document.getElementById('error-display');
+        if (errorLog) {
+          errorLog.style.display = 'block';
+          errorLog.innerHTML += '<p><strong>Promesa no manejada:</strong> ' +
+            (event.reason ? (event.reason.stack || event.reason.message) : 'Sin detalles') + '</p>';
+        }
+      });
+    </script>
   </body>
 </html> 

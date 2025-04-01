@@ -151,13 +151,107 @@
   color: var(--accent);
 }
 
+/* Tablet */
+@media (max-width: 1200px) {
+  .timeline {
+    gap: 32px;
+  }
+
+  .timeline-content {
+    padding: 14px;
+  }
+}
+
+/* Mobile Large */
 @media (max-width: 768px) {
+  .experience-section {
+      padding: 20px;
+    }
+  
+    .timeline {
+      gap: 24px;
+    }
+  
+    .timeline-header {
+      margin-bottom: 20px;
+    }
+  
+    .timeline-icon {
+      width: 36px;
+      height: 36px;
+      font-size: 18px;
+    }
+  
+    .timeline-header h3 {
+      font-size: 1.1rem;
+    }
+  
+    .timeline-item {
+      padding-left: 24px;
+      margin-bottom: 24px;
+    }
+  
+    .timeline-dot {
+      width: 10px;
+      height: 10px;
+    }
+  
+    .timeline-item:not(:last-child)::before {
+      left: 4px;
+    }
   .timeline-title-row {
     flex-direction: column;
   }
-  
+
   .timeline-period {
     margin-left: 0;
     margin-top: 4px;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 16px;
+  }
+
+  .timeline {
+    gap: 20px;
+  }
+
+  .timeline-header {
+    margin-bottom: 16px;
+  }
+
+  .timeline-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .timeline-header h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-item {
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .timeline-content {
+    padding: 12px;
+  }
+
+  .timeline-title-row h4 {
+    font-size: 1rem;
+  }
+
+  .timeline-company {
+    font-size: 0.9rem;
+  }
+
+  .timeline-description,
+  .timeline-responsibilities li {
+    font-size: 0.85rem;
   }
 } 

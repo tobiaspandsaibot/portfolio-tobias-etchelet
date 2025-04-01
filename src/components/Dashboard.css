@@ -2,75 +2,246 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+padding: 12px;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .header {
   display: flex;
+flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px 30px;
-  text-align: center;
-  background: linear-gradient(100deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.07));
+padding: 48px 24px;
+    background: linear-gradient(135deg, rgba(93, 84, 199, 0.1), rgba(0, 0, 0, 0));
   border: 1px solid var(--card-border);
-  overflow: hidden;
+border-radius: 16px;
   position: relative;
+overflow: hidden;
 }
 
 .header::before {
   content: '';
   position: absolute;
-  width: 200%;
-  height: 200%;
+top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
   background: linear-gradient(
-    100deg,
+    90deg,
     transparent,
-    rgba(80, 70, 229, 0.1),
+    rgba(255, 255, 255, 0.1),
     transparent
   );
-  transform: rotate(-45deg);
-  top: -50%;
-  left: -50%;
-  animation: shine 8s infinite;
+animation: shine 3s infinite;
 }
 
 @keyframes shine {
-  0% {
-    transform: translateX(-50%) rotate(-45deg);
-  }
-  50% {
-    transform: translateX(50%) rotate(-45deg);
-  }
-  100% {
-    transform: translateX(-50%) rotate(-45deg);
-  }
-}
+to {
+        left: 200%;
 
-.header-content {
-  position: relative;
-  z-index: 1;
-}
-
+    }
 .header h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-
 .subtitle {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.5;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+}
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 24px;
+    align-items: start;
 }
 
-section {
-  margin-bottom: 24px;
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
+.section {
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+/* Estilos para el botón VR */
+.vr-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 24px;
+    box-shadow: 0 4px 15px rgba(93, 84, 199, 0.3);
+}
+
+.vr-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(93, 84, 199, 0.4);
+}
+
+.vr-toggle-btn svg {
+    font-size: 1.2rem;
+}
+
+/* Media queries */
+@media (max-width: 1400px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+  .header h1 {
+    font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.25rem;
+    }
+    }
+    
+    @media (max-width: 768px) {
+        .dashboard {
+            padding: 8px;
+            gap: 16px;
+        }
+    
+        .header {
+            padding: 32px 16px;
+        }
+    
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+    
+        .subtitle {
+            font-size: 1rem;
+            padding: 0 12px;
+        }
+    
+        section {
+            margin-bottom: 16px;
+        .section {
+                padding: 16px;
+            }
+        
+            .section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 16px;
+            }
+        
+            .social-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+        
+            .social-link {
+                justify-content: center;
+            }
+        
+            .contact-section {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .dashboard {
+                gap: 12px;
+            }
+        
+            .header {
+                padding: 20px 16px;
+            }
+        
+            .header h1 {
+                font-size: 1.75rem;
+            }
+        
+            .subtitle {
+            font-size: 0.9rem;
+                padding: 0 8px;
+            }
+            
+            .section {
+                padding: 12px;
+            }
+            
+            .section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            }
+            
+            .social-link {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .contact-section {
+                padding: 16px;
+            }
+            
+            .contact-description {
+                margin-bottom: 16px;
+                font-size: 0.9rem;
+            }
+            }
+            
+            /* Estilos para la sección de habilidades */
+            .skills-section {
+                padding: 24px;
+            }
+            
+            .skills-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 16px;
+            }
+            
+            .skill-card {
+                background: rgba(255, 255, 255, 0.03);
+                padding: 16px;
+                border-radius: 8px;
+                text-align: center;
+                transition: transform 0.3s ease;
+            }
+            
+            .skill-card:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            .skill-icon {
+                margin-bottom: 12px;
+                font-size: 32px;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Estilos para la sección de contacto */
 .contact-section {
   padding: 24px;
 }
@@ -78,38 +249,80 @@ section {
 .contact-description {
   margin-bottom: 24px;
   color: var(--text-secondary);
-  line-height: 1.6;
 }
 
-.contact-info {
+.social-links {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    font-size: 1.2rem;
+}
+
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.contact-item {
+.form-group {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+gap: 8px;
 }
 
-.contact-item a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: color 0.3s ease;
+.form-group label {
+    font-weight: 500;
+    color: var(--text-primary);
 }
 
-.contact-item a:hover {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .header h1 {
-    font-size: 2.2rem;
-  }
-  
-  .subtitle {
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--text-primary);
     font-size: 1rem;
-  }
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.submit-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(93, 84, 199, 0.3);
 } 
