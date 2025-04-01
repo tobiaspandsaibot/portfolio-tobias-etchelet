@@ -14,7 +14,7 @@ const Dashboard = () => {
           <h1>Tobias Etchelet</h1>
           <p className="subtitle">
             Diseñador Web y UX/UI con más de 12 años de experiencia creando interfaces
-            funcionales y atractivas. Especializado en diseño centrado en el usuario y desarrollo frontend.
+            funcionales y atractivas.   Especializado en diseño centrado en el usuario y desarrollo frontend.
           </p>
         </div>
       </header>

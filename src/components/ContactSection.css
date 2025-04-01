@@ -19,7 +19,7 @@
 
 .social-links {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 16px;
     margin-bottom: 32px;
 }
@@ -47,54 +47,12 @@
     font-size: 1.2rem;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    flex: 1;
+.whatsapp-link {
+    background: linear-gradient(135deg, #25D366, #128C7E);
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.form-group label {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-.form-group input,
-.form-group textarea {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--card-border);
-    border-radius: 8px;
-    padding: 12px;
-    color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
-}
-
-.form-group textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.submit-btn {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: auto;
-}
-
-.submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(93, 84, 199, 0.4);
+.whatsapp-link:hover {
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
 @media (max-width: 1400px) {
@@ -112,7 +70,7 @@
 @media (max-width: 768px) {
     .social-links {
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
     }
 
     .social-link {
@@ -120,7 +78,7 @@
     }
 
     .contact-section {
-        padding: 16px;
+        padding: 20px;
     }
 }
 

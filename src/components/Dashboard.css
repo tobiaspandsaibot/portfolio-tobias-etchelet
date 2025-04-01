@@ -51,6 +51,7 @@ to {
 .subtitle {
     font-size: 1.5rem;
     color: var(--text-secondary);
+    width: 100%;
 }
 .content-grid {
     display: grid;
