@@ -1,6 +1,6 @@
 import React from 'react';
 import './ExperienceSection.css';
-import { FaBriefcase, FaGraduationCap } from 'react-icons/fa';
+import { FaBriefcase} from 'react-icons/fa';
 
 const ExperienceSection = () => {
   const experiences = [
@@ -74,32 +74,7 @@ const ExperienceSection = () => {
     }
   ];
 
-  const education = [
-    {
-      title: 'Técnico Superior en Diseño de Interfaces Digitales',
-      institution: 'ORT Argentina',
-      period: '2018 – 2024',
-      description: 'Actualmente completando las últimas materias, próximo a recibirse.'
-    },
-    {
-      title: 'Diseñador Gráfico',
-      institution: 'ORT Argentina',
-      period: '2018 – 2024',
-      description: 'Especialización en creación de logotipos, isotipos y branding, incluyendo la creación de manual de identidad corporativo.'
-    },
-    {
-      title: 'Diseñador Web',
-      institution: 'ORT Argentina',
-      period: '2018 – 2024',
-      description: 'Especialización en diseño y desarrollo de sitios web, abarcando desde la maquetación hasta el diseño final, ofreciendo soluciones de calidad profesional.'
-    },
-    {
-      title: 'Ilustrador Digital',
-      institution: 'Puerta 18',
-      period: '2015 – 2016',
-      description: 'Espacio gratuito para jóvenes de 13 a 24 años, donde se fomentan habilidades y vocaciones a través del uso de herramientas tecnológicas.'
-    }
-  ];
+
 
   return (
     <div className="experience-section glass-card">
@@ -134,30 +109,7 @@ const ExperienceSection = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="timeline-section">
-          <div className="timeline-header">
-            <div className="timeline-icon education">
-              <FaGraduationCap />
-            </div>
-            <h3>Educación</h3>
-          </div>
-
-          {education.map((edu, index) => (
-            <div key={index} className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <div className="timeline-title-row">
-                  <h4>{edu.title}</h4>
-                  <span className="timeline-period">{edu.period}</span>
-                </div>
-                <div className="timeline-company">{edu.institution}</div>
-                {edu.description && <p className="timeline-description">{edu.description}</p>}
-              </div>
-            </div>
-          ))}
-        </div>
+        </div>    
       </div>
     </div>
   );

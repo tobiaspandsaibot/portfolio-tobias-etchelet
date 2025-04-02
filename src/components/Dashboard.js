@@ -5,6 +5,8 @@ import UxUiSection from './UxUiSection';
 import SkillsSection from './SkillsSection';
 import SoftwareSkills from './SoftwareSkills';
 import ContactSection from './ContactSection';
+import EducationSection from './EducationSection';
+import ExperienceSection from './ExperienceSection';
 
 const Dashboard = () => {
   return (
@@ -21,6 +23,16 @@ const Dashboard = () => {
 
       <div className="content-grid">
         <div className="main-content">
+          {/* Sección de Experiencia */}
+          <section id="experience">
+            <ExperienceSection />
+          </section>
+
+          {/* Sección de Educación */}
+          <section id="education">
+            <EducationSection />
+          </section>
+
           {/* Sección de Habilidades */}
           <section id="skills">
             <SkillsSection />
