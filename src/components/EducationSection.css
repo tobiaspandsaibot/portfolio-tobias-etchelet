@@ -1,0 +1,113 @@
+.education-section {
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+}
+
+.education-section h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.education-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.education-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.education-header h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.education-date {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 4px 8px;
+    background: rgba(93, 84, 199, 0.1);
+    border-radius: 20px;
+}
+
+.education-details {
+    color: var(--text-secondary);
+}
+
+.education-details p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.education-details strong {
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .education-section {
+        padding: 20px;
+    }
+
+    .education-item {
+        padding: 16px;
+    }
+
+    .education-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .education-date {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .education-section {
+        padding: 16px;
+    }
+
+    .education-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .education-item {
+        padding: 14px;
+    }
+
+    .education-header h3 {
+        font-size: 1.1rem;
+    }
+}

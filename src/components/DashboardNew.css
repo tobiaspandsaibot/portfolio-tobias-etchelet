@@ -1,3 +1,22 @@
+.app {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background-color: var(--bg);
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 24px;
+    padding: 12px;
+    min-height: 100vh;
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    /* Asegura que el contenedor tome toda la altura disponible */
+}
 .dashboard {
     display: flex;
     flex-direction: column;
