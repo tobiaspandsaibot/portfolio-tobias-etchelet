@@ -13,7 +13,7 @@ const EducationSection = () => {
         </div>
         <div className="education-details">
           <p><strong>Institución:</strong> ORT Argentina</p>
-          <p>Actualmente completando las últimas materias, próximo a recibirse.</p>
+          <p>Actualmente en proceso las últimas materias de la carrera. </p>
         </div>
       </div>
 
@@ -24,7 +24,7 @@ const EducationSection = () => {
         </div>
         <div className="education-details">
           <p><strong>Institución:</strong> ORT Argentina</p>
-          <p>Especialización en creación de logotipos, isotipos y branding, incluyendo la creación de manual de identidad corporativo.</p>
+          <p> Diseño gráfico, digital e impresión. Especialización en creación de logotipos, isotipos y branding, incluyendo la creación de manual de identidad corporativo.</p>
         </div>
       </div>
 

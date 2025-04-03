@@ -28,13 +28,15 @@
 .project-content {
   flex: 1;
   padding: 20px;
+  display: flex;
+    flex-direction: column;
 }
 
 .project-title {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 8px;
+  margin: 0 0 8px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,7 +99,7 @@
 
 .project-image {
   width: 100%;
-  height: 260px;
+  height: 200px;
   overflow: hidden;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -105,89 +107,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 16px;
+    position: relative;
 }
 
 .project-image img {
   width: auto;
   max-width: 80%;
   height: auto;
-  max-height: 80%;
+  max-height: 85%;
+    object-fit: contain;
   transition: transform 0.3s ease;
 }
 
-/* Imágenes específicas para los proyectos de UX/UI que sí deben expandirse y recortarse */
-.bulgari-image,
-.burger-bot-image {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Contenedor específico para imágenes UX/UI */
-.uxui-project-image {
-  padding: 0 !important;
-  height: 200px !important;
-  width: 100% !important;
-  overflow: hidden !important;
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.05);
-}
-
-/* Asegurar que solo las imágenes UX/UI se expandan */
-.uxui-project-card:hover .uxui-project-image img {
-  transform: scale(1.05);
-}
-
-/* Evitar que algunas imágenes específicas se expandan */
-.project-card:hover .project-image .jardin-image,
-.project-card:hover .project-image .soluciones-image,
-.project-card:hover .project-image .neorelax-image {
-  transform: none;
-}
-
 /* Imágenes específicas para los proyectos web que no deben expandirse */
-.jardin-image {
+.jardin-image,
+.soluciones-image,
+.neorelax-image,
+.babz-image,
+.sns-image {
   width: auto;
   max-width: 80%;
   height: auto;
-  max-height: 80%;
+  max-height: 85%;
     object-fit: contain !important;
   transition: none;
 }
 
-.soluciones-image {
-  width: auto;
-  max-width: 80%;
-  height: auto;
-  max-height: 80%;
-    object-fit: contain !important;
-  transition: none;
-}
-
-.neorelax-image {
-  width: auto;
-  max-width: 80%;
-  height: auto;
-  max-height: 80%;
-    object-fit: contain !important;
-  transition: none;
-}
-
-/* Altura específica para el contenedor de la imagen de Neorelax */
+/* Eliminar altura específica para el contenedor de la imagen de Neorelax */
 .project-card:nth-child(3) .project-image {
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
+  height: 200px;
 }
 
 /* Tablet */

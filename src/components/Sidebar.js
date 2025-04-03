@@ -1,10 +1,37 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Sidebar.css';
 import profileImage from '../assets/tobias-etchelet.jpg';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Registrar el plugin ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 const Sidebar = () => {
+  const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    const sidebar = sidebarRef.current;
+    
+    const sidebarTrigger = ScrollTrigger.create({
+      trigger: sidebar,
+      start: 'top 12px',
+      endTrigger: '.dashboard-container',
+      end: 'bottom bottom',
+      pin: true,
+      pinSpacing: false,
+      anticipatePin: 1,
+      id: 'sidebarPin'
+    });
+
+    // Limpieza al desmontar el componente
+    return () => {
+      sidebarTrigger.kill();
+    };
+  }, []);
+
   return (
-    <div className="sidebar glass-card">
+    <div className="sidebar glass-card" ref={sidebarRef}>
       <div className="profile">
         <div className="avatar">
           <img src={profileImage} alt="Tobias Etchelet" />

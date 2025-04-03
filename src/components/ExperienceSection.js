@@ -7,45 +7,61 @@ const ExperienceSection = () => {
     {
       title: 'Head of Product Design',
       company: 'Babz LLC',
-      period: 'Mayo 2024 – Mayo 2025',
+      period: 'Mayo 2024 – Abril 2025 ( 1 año )',
       location: 'Argentina · En remoto',
       description: 'Jornada completa',
+      companyUrl: 'https://www.linkedin.com/company/babz-llc/',
       responsibilities: [
-        'Brand Design and Identity',
+        'Brand Design and Identity System',
         'UI Kit Design',
         'Graphic Design',
-        'App UX Design',
+        'Application UX Design',
         'Website UX Design',
-        'Website Development',
+        'Website Developer',
         'Website Optimization',
         'Video Animations',
+        'Digital Marketing Strategy',
         'Google Firebase/Analytics'
       ]
     },
     {
       title: 'CoFundador / CEO',
-      company: 'Spandsaibot',
-      period: 'Noviembre 2020 – Presente',
+      company: 'SNS SPandsaiboT',
+      period: 'Noviembre 2020 – Mayo 2024 ( 4 años 5 meses )',
       location: 'Argentina',
-      description: 'Servicios web y marketing digital para clientes nacionales e internacionales (empresas, negocios, pymes y profesionales independientes).',
+      description: 'Web Sercices. Development. UX/UI. Design System. Servicios web y marketing digital para clientes nacionales e internacionales (empresas, negocios, pymes y profesionales independientes).',
+      companyUrl: 'https://www.linkedin.com/company/sp-saibot',
       responsibilities: [
-        'Liderazgo de un equipo de 5 personas, gestionando deadlines y supervisando el cumplimiento de objetivos.'
+        'Colaboración con más de 50 clientes en proyectos web',
+        'Especialización en diseño UX/UI para sitios web',
+        'Gestión de desarrollo web, diseño web y mantenimiento',
+        'Manejo integral de proyectos desde el diseño hasta el lanzamiento',
+        'Liderazgo de un equipo de hasta 5 personas como WebMaster',
+        'Servicios de Marketing Digital y estrategia online',
+        'Gestión de dominios, hosting SSD y correos profesionales',
+        'Soporte técnico y mantenimiento mensual de sitios web'
       ]
     },
     {
-      title: 'CEO',
-      company: 'Saibotdg',
-      period: 'Septiembre 2016 – Octubre 2020 (4 años)',
+      title: 'Designer & Web Designer',
+      company: 'SaiboT DG',
+      period: 'Diciembre 2015 – Diciembre 2020 ( 4 años 11 meses )',
       location: 'Argentina',
       description: 'Gestión de más de 100 proyectos de clientes de forma independiente (freelance).',
       responsibilities: [
-        'Enfoque en diseño gráfico, rediseño de imagen, GIF animados, banners animados, diseño y creación de webs, y mejora de la estructura digital.'
+        'Gestión independiente de más de 40 proyectos para clientes pequeños y medianos como freelancer',
+        'Diseño gráfico: Creación de diseños atractivos para diversos medios',
+        'Rediseño de identidad: Renovación de identidades de marca para reflejar mejor la visión del cliente',
+        'GIFs animados: Diseño de GIFs dinámicos y atractivos',
+        'Banners animados: Creación de banners publicitarios llamativos para publicidad online',
+        'Diseño y desarrollo web: Diseño y desarrollo de sitios web intuitivos y amigables', 
+        'Mejora de estructura digital: Optimización de estructuras digitales basada en la transformación de procesos de negocio'
       ]
     },
     {
       title: 'Productor / Jefe de Depósito',
       company: 'BAM EVENT PLANNERS',
-      period: 'Septiembre 2015 – Septiembre 2016 (1 año 1 mes)',
+      period: 'Enero 2014 – Octubre 2015 (1 año 10 meses)',
       location: 'Argentina',
       description: 'Organización de eventos corporativos y sociales (coordinación, producción, logística y montajes).',
       responsibilities: [
@@ -61,7 +77,7 @@ const ExperienceSection = () => {
     {
       title: 'Asistente Administrativo Sénior',
       company: 'Shimano Latin America Representación Comercial Ltda.',
-      period: '2013 – Octubre 2014 (1 año 6 meses)',
+      period: 'Mayo 2013 – Octubre 2014 (1 año 6 meses)',
       location: 'Argentina',
       description: '',
       responsibilities: [
@@ -74,7 +90,11 @@ const ExperienceSection = () => {
     }
   ];
 
-
+  const handleCompanyClick = (url) => {
+    if (url) {
+      window.open(url, '_blank', 'noopener noreferrer');
+    }
+  };
 
   return (
     <div className="experience-section glass-card">
@@ -90,7 +110,12 @@ const ExperienceSection = () => {
           </div>
 
           {experiences.map((exp, index) => (
-            <div key={index} className="timeline-item">
+            <div 
+              key={index} 
+              className="timeline-item"
+              onClick={() => handleCompanyClick(exp.companyUrl)}
+              style={{ cursor: exp.companyUrl ? 'pointer' : 'default' }}
+            >
               <div className="timeline-dot"></div>
               <div className="timeline-content">
                 <div className="timeline-title-row">

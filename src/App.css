@@ -55,9 +55,11 @@ body {
   grid-template-columns: 280px minmax(0, 1fr);
   gap: 24px;
   padding: 12px;
-    min-height: 100vh;
+  min-height: 100vh;
   max-width: 1920px;
   margin: 0 auto;
+  align-items: start;
+    position: relative;
 }
 
 /* Estilos para cristal (glass) */
@@ -109,7 +111,7 @@ body {
 @media (max-width: 768px) {
   .dashboard-container {
     padding: 8px;
-      gap: 16px;
+    gap: 16px;
     }
     }
     

@@ -37,7 +37,7 @@ const SkillsSection = () => {
     },
     {
       id: 'marketing-fb',
-      title: 'Marketing Digital - FB / IG Ads',
+      title: 'Meta Ads',
       icon: <FaChartLine />,
       skills: [
         'Más de 60 campañas realizadas para 20 empresas de diferentes nichos.',
@@ -51,7 +51,7 @@ const SkillsSection = () => {
     },
     {
       id: 'marketing-google',
-      title: 'Marketing Digital - Google Ads',
+      title: 'Google Ads',
       icon: <FaGlobe />,
       skills: [
         'Más de 30 campañas realizadas para 15 empresas de distintos nichos.',
