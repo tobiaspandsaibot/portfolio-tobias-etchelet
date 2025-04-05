@@ -200,6 +200,7 @@
     padding: 12px;
     bottom: 0px !important;
     gap: 0px;
+    position: sticky
     
   }
 .profile {

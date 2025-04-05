@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.4c6bd97e.css",
+    "main.css": "./static/css/main.5f606723.css",
     "main.js": "./static/js/main.20deaf5c.js",
     "static/js/206.09b0e213.chunk.js": "./static/js/206.09b0e213.chunk.js",
     "static/media/tobias-etchelet.jpg": "./static/media/tobias-etchelet.36fd1f3220a80a9f5eb3.jpg",
@@ -14,7 +14,7 @@
     "index.html": "./index.html"
   },
   "entrypoints": [
-    "static/css/main.4c6bd97e.css",
+    "static/css/main.5f606723.css",
     "static/js/main.20deaf5c.js"
   ]
 }
