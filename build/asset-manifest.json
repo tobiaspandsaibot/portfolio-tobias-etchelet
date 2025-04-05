@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "./static/css/main.8f1d01c3.css",
-    "main.js": "./static/js/main.83275c59.js",
-    "static/js/453.3ea09d55.chunk.js": "./static/js/453.3ea09d55.chunk.js",
+    "main.css": "./static/css/main.4c6bd97e.css",
+    "main.js": "./static/js/main.20deaf5c.js",
+    "static/js/206.09b0e213.chunk.js": "./static/js/206.09b0e213.chunk.js",
     "static/media/tobias-etchelet.jpg": "./static/media/tobias-etchelet.36fd1f3220a80a9f5eb3.jpg",
+    "static/media/babz-website.png": "./static/media/babz-website.aee2fdd39a272f9b3ff0.png",
+    "static/media/snswebsite.png": "./static/media/snswebsite.fc10f9248857804437f5.png",
     "static/media/burger-bot.png": "./static/media/burger-bot.623aa3242d4551ffa91d.png",
     "static/media/bulgari.png": "./static/media/bulgari.7c3215914865130e4bda.png",
     "static/media/project2.jpg": "./static/media/project2.e09465989dd46b512ae9.jpg",
     "static/media/Logo-Neorelax-2048x695-1.png": "./static/media/Logo-Neorelax-2048x695-1.5c89bc05020423d8f0e6.png",
     "static/media/project1.jpg": "./static/media/project1.c14e4b3a988fcaa69380.jpg",
-    "index.html": "./index.html",
-    "main.8f1d01c3.css.map": "./static/css/main.8f1d01c3.css.map",
-    "main.83275c59.js.map": "./static/js/main.83275c59.js.map",
-    "453.3ea09d55.chunk.js.map": "./static/js/453.3ea09d55.chunk.js.map"
+    "index.html": "./index.html"
   },
   "entrypoints": [
-    "static/css/main.8f1d01c3.css",
-    "static/js/main.83275c59.js"
+    "static/css/main.4c6bd97e.css",
+    "static/js/main.20deaf5c.js"
   ]
 }

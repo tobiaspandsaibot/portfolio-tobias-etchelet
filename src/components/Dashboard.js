@@ -1,5 +1,5 @@
 import React from 'react';
-import './DashboardNew.css';
+import './Dashboard.css';
 import ProjectsSection from './ProjectsSection';
 import UxUiSection from './UxUiSection';
 import SkillsSection from './SkillsSection';
@@ -55,12 +55,12 @@ const Dashboard = () => {
           </section>
 
           {/* Sección de Diseños UX/UI */}
-          <section id="uxui">
+          <section id="uxui" className='uxui-section'>
             <UxUiSection />
           </section>
         </div>
 
-        <div className="right-column">
+        <div className="right-column" id="contact">
           <ContactSection />
         </div>
       </div>

@@ -1,7 +1,10 @@
-import React from 'react';
-import './App.css';
-import Sidebar from './components/Sidebar';
-import Dashboard from './components/Dashboard';
+import React from "react";
+import "./App.css";
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./components/Dashboard";
+import {
+  FiMessageSquare,
+} from "react-icons/fi";
 
 function App() {
   return (
@@ -11,10 +14,16 @@ function App() {
 
       <div className="dashboard-container">
         <Sidebar />
+
+        <div className="contacticonfixed">
+          <a href="#contact">
+            <FiMessageSquare size={60} />
+          </a>
+        </div>
         <Dashboard />
       </div>
     </div>
   );
 }
 
-export default App; 
+export default App;

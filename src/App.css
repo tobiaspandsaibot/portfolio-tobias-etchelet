@@ -15,6 +15,13 @@
   box-sizing: border-box;
 }
 
+.contacticonfixed {
+  display: none;
+ }
+
+
+
+
 body {
   background-color: var(--bg);
   color: var(--text-primary);
@@ -120,6 +127,18 @@ body {
         padding: 4px;
         gap: 12px;
       }
+
+      .contacticonfixed {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 999999;
+        display: block;
+        padding: 10px;
+        opacity: 0.4;
+      scroll-behavior: smooth;
+      }
+
     }
     
     /* VR Mode */
@@ -151,3 +170,4 @@ body {
 .vr-mode .glass-card:hover {
   transform: translateZ(40px);
 } 
+

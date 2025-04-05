@@ -7,9 +7,7 @@ const AboutSection = () => {
       <h2 className="section-title">Sobre Mí</h2>
       
       <div className="about-content">
-        <p>
-          Soy Diseñador/Desarrollador Web con más de 12 años de experiencia, especializado en:
-        </p>
+        
         <ul className="skills-list">
           <li>Diseño gráfico</li>
           <li>Diseño web</li>
@@ -18,14 +16,14 @@ const AboutSection = () => {
         </ul>
         
         <p>
-          Me especialicé en Paid Media creando anuncios en Meta Ads y Google Ads.
+          Me especialicé en Paid Media creando anuncios en Meta Ads y Google Ads y tengo experiencia con negocios reales a nivel nacional e internacional.
           Uso mis habilidades en más de 50 herramientas de Inteligencia Artificial (AI), y las aplico en el desarrollo de mi trabajo, mejorando la calidad, velocidad y automatización de mi trabajo.
         </p>
         
         <p>
-          Amo lo que hago. Mi misión es ayudar a transformar negocios y empresas, 
-          creando experiencias web únicas, utilizando herramientas y software de 
-          vanguardia, siempre a favor de un mundo mejor.
+          Amo lo que hago! 
+          Mi misión es ayudar a transformar la vida de muchas personas, negocios y empresas, 
+          creando soluciones y experiencias web únicas y de alta calidad.
         </p>
         
       </div>

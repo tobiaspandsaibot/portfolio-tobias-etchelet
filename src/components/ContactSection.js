@@ -35,7 +35,7 @@ const ContactSection = () => {
       <section className="contact-section">
         <h2>Contacto</h2>
         <p className="contact-description">
-          ¿Tienes un proyecto en mente? ¿Quieres que te ayude a desarrollarlo? ¿Asesorías en programación? ¡Me encantaría escucharte! Desarrollemos tu proyecto de inicio a fin. Contáctame a través de las siguientes opciones:
+          ¿Tienes un proyecto en mente? Hablemos :) 
         </p>
         
         <div className="social-links">

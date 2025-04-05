@@ -71,3 +71,17 @@ a.contact-value:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(80, 70, 229, 0.3);
 } 
+
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding-top: 150px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    padding-top: 100px !important;
+  }
+}
+

@@ -7,7 +7,7 @@ const ExperienceSection = () => {
     {
       title: 'Head of Product Design',
       company: 'Babz LLC',
-      period: 'Mayo 2024 – Abril 2025 ( 1 año )',
+      period: 'March 2024 – Abril 2025 ( 1 año y 1 mes )',
       location: 'Argentina · En remoto',
       description: 'Jornada completa',
       companyUrl: 'https://www.linkedin.com/company/babz-llc/',
@@ -29,16 +29,16 @@ const ExperienceSection = () => {
       company: 'SNS SPandsaiboT',
       period: 'Noviembre 2020 – Mayo 2024 ( 4 años 5 meses )',
       location: 'Argentina',
-      description: 'Web Sercices. Development. UX/UI. Design System. Servicios web y marketing digital para clientes nacionales e internacionales (empresas, negocios, pymes y profesionales independientes).',
+      description: 'Web Services. Development. UX/UI. Design System. Servicios web y marketing digital para clientes nacionales e internacionales (empresas, negocios, pymes y profesionales independientes).',
       companyUrl: 'https://www.linkedin.com/company/sp-saibot',
       responsibilities: [
-        'Colaboración con más de 50 clientes en proyectos web',
+        'Servicios activos con más de 50 clientes en proyectos web',
         'Especialización en diseño UX/UI para sitios web',
         'Gestión de desarrollo web, diseño web y mantenimiento',
         'Manejo integral de proyectos desde el diseño hasta el lanzamiento',
         'Liderazgo de un equipo de hasta 5 personas como WebMaster',
         'Servicios de Marketing Digital y estrategia online',
-        'Gestión de dominios, hosting SSD y correos profesionales',
+        'Gestión de dominios, Hosting SSD y correos profesionales',
         'Soporte técnico y mantenimiento mensual de sitios web'
       ]
     },
