@@ -9,7 +9,7 @@ const ExperienceSection = () => {
       company: 'Babz LLC',
       period: 'Marzo 2024 – Abril 2025 ( 1 año y 1 mes )',
       location: 'Argentina · En remoto',
-      description: 'Jornada completa',
+      description: 'Jornada completa. 100% remoto. Diseño y desarrollo web.',
       companyUrl: 'https://www.linkedin.com/company/babz-llc/',
       responsibilities: [
         'Brand Design and Identity System',

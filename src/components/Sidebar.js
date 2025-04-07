@@ -45,7 +45,7 @@ const Sidebar = () => {
     <div className="sidebar glass-card" ref={sidebarRef}>
       <div className="profile">
         <div className="avatar">
-          <a href="#about">
+          <a href="#dashboard-container">
             <img src={profileImage} alt="Tobias Etchelet" />
           </a>
         </div>

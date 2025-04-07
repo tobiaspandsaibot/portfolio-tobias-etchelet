@@ -11,7 +11,7 @@ import AboutSection from './AboutSection';
 
 const Dashboard = () => {
   return (
-    <div className="dashboard">
+    <div className="dashboard" id="dashboard">
       <header id="about" className="header glass-card">
         <div className="header-content">
           <h1>Tobias Etchelet</h1>

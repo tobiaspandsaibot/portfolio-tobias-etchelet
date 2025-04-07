@@ -53,15 +53,16 @@
   position: absolute;
   top: 0;
   left: -100%;
-  width: 50%;
+  width: 40%;
   height: 100%;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.479),
     transparent
   );
-  animation: shine 3s infinite;
+  animation: shine 5s infinite;
+  filter: blur(10px);
 }
 
 @keyframes shine {
@@ -70,7 +71,7 @@
   }
 }
 .header h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   margin-bottom: 8px;
   background: linear-gradient(135deg, var(--primary), var(--accent));

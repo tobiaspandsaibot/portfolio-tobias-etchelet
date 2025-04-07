@@ -12,7 +12,7 @@ function App() {
       <div className="gradient-bg top-left"></div>
       <div className="gradient-bg bottom-right"></div>
 
-      <div className="dashboard-container">
+      <div className="dashboard-container" id="dashboard-container">
         <Sidebar />
 
         <div className="contacticonfixed">
