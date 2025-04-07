@@ -26,13 +26,11 @@
   margin: 0 auto;
 }
 
-
 .header-content {
   margin: 0;
   padding: 0;
   text-align: left !important;
 }
-
 
 .header {
   display: flex;
@@ -78,8 +76,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-
 
 .subtitle {
   font-size: 1.5rem;
@@ -205,19 +201,27 @@
 @media (max-width: 480px) {
   .dashboard {
     gap: 12px;
+    width: 95vw !important;
+    text-wrap: wrap;
+  }
+
+  p.subtitle {
+    text-wrap: wrap;
   }
 
   .dashboard-container {
     grid-template-columns: 1fr;
     /* Solo una columna */
-    padding: 8px;
+    padding: 8px 8px;
     min-height: 100vh;
     max-width: 1920px;
     margin: 0 auto;
     position: relative;
     height: 100%;
+    width: 100vw !important;
 
     /* Asegura que el contenedor tome toda la altura disponible */
+
     .subtitle {
       font-size: 0.9rem;
       padding: 0 8px;
