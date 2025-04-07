@@ -45,7 +45,9 @@ const Sidebar = () => {
     <div className="sidebar glass-card" ref={sidebarRef}>
       <div className="profile">
         <div className="avatar">
-          <img src={profileImage} alt="Tobias Etchelet" />
+          <a href="#about">
+            <img src={profileImage} alt="Tobias Etchelet" />
+          </a>
         </div>
         <div className="name">
           <h2>Tobias Etchelet</h2>
@@ -67,12 +69,22 @@ const Sidebar = () => {
           </li>
           <li>
             <a href="#projects">
-              <FaBriefcase /> Proyectos
+              <FiCode /> Proyectos
             </a>
           </li>
           <li>
             <a href="#uxui">
-              <FiBriefcase /> Diseños UX/UI
+              <FaBriefcase /> Diseños UX/UI
+            </a>
+          </li>
+          <li>
+            <a href="#education">
+              <FiBriefcase /> Educación
+            </a>
+          </li>
+          <li>
+            <a href="#experience">
+              <FiActivity /> Experiencia
             </a>
           </li>
         </ul>

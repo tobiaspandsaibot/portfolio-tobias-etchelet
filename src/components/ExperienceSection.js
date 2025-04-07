@@ -7,7 +7,7 @@ const ExperienceSection = () => {
     {
       title: 'Head of Product Design',
       company: 'Babz LLC',
-      period: 'March 2024 – Abril 2025 ( 1 año y 1 mes )',
+      period: 'Marzo 2024 – Abril 2025 ( 1 año y 1 mes )',
       location: 'Argentina · En remoto',
       description: 'Jornada completa',
       companyUrl: 'https://www.linkedin.com/company/babz-llc/',
@@ -27,7 +27,7 @@ const ExperienceSection = () => {
     {
       title: 'CoFundador / CEO',
       company: 'SNS SPandsaiboT',
-      period: 'Noviembre 2020 – Mayo 2024 ( 4 años 5 meses )',
+      period: 'Noviembre 2020 – Febrero 2024 ( 4 años 5 meses )',
       location: 'Argentina',
       description: 'Web Services. Development. UX/UI. Design System. Servicios web y marketing digital para clientes nacionales e internacionales (empresas, negocios, pymes y profesionales independientes).',
       companyUrl: 'https://www.linkedin.com/company/sp-saibot',

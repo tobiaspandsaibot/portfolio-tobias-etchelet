@@ -16,7 +16,7 @@ const AboutSection = () => {
         </ul>
         
         <p>
-          Me especialicé en Paid Media creando anuncios en Meta Ads y Google Ads y tengo experiencia con negocios reales a nivel nacional e internacional.
+         Tengo experiencia dando soluciones de Diseño y Desarrollo Web a problemas de negocios reales, tratanto con clientes y equipos, a nivel nacional e internacional, para  clientes de Argentina, Estados unidos, Uruguay y España.  Me especialicé en Paid Media creando anuncios en Meta Ads y Google Ads.
           Uso mis habilidades en más de 50 herramientas de Inteligencia Artificial (AI), y las aplico en el desarrollo de mi trabajo, mejorando la calidad, velocidad y automatización de mi trabajo.
         </p>
         
