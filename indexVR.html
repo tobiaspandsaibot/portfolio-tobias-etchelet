@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Laser input UI</title>
+    <meta name="description" content="Laser input UI • A-Frame">
+    <!-- Asegúrate de que /js/aframe-master.min.js exista, o usa la CDN oficial de A-Frame -->
+    <script src="/js/aframe-master.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+    <!-- Si no tienes message.html, elimina estas líneas -->
+    <script src="/message.html"></script>
+    <script src="/js/highlight.js"></script>
+    <script src="/js/info-panel.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://unpkg.com/aframe-html-shader/dist/aframe-html-shader.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component/dist/aframe-animation-component.min.js"></script> 
+
+  </head>
+  <body>
+    <header>
+      <img src="/assets/tobias.jpg" alt="Tobias Etchelet" id="headerImage">
+      <h1>Tobías Etchelet</h1>
+    </header>
+    <!-- HTML content to be displayed on the plane -->
+<div id="html-content" style="display:flex;">
+  <div style="background-color: white; color: black; padding: 10px; font-size: 16px; text-align: center;">
+    <h2>Welcome to My VR Scene</h2>
+    <p>This is an example of HTML content displayed in A-Frame.</p>
+  </div>
+</div>
+    <a-scene
+      background="color: #212"
+      environment="preset: starry; skyColor: #222; fog: 0.8"
+      cursor="rayOrigin: mouse; fuse: false" raycaster="objects: .raycastable"
+      info-message="htmlSrc: #messageText"
+    >
+      <a-assets>
+        <!-- Archivo message.html (si realmente existe). Si no lo usas, quita esta línea y la propiedad info-message -->
+        <a-asset-item id="messageText" src="message.html"></a-asset-item>
+
+        <!-- Imágenes de ejemplo -->
+        <img id="kazetachinu" src="/assets/Screenshot_1.png" crossorigin="anonymous"/>
+        <img id="kazetachinuPoster" src="/assets/developer.jpeg" crossorigin="anonymous"/>
+        <img id="ponyo" src="/assets/portfolioinprocess.png" crossorigin="anonymous"/>
+        <img id="ponyoPoster" src="/assets/OIG-20.jpeg" crossorigin="anonymous"/>
+        <img id="karigurashi" src="/assets/tobi-traje.png" crossorigin="anonymous"/>
+        <img id="karigurashiPoster" src="/assets/tobias.jpg" crossorigin="anonymous"/>
+      
+        <!-- Mixins para definir geometrías y materiales -->
+        <a-mixin
+          id="frame"
+          geometry="primitive: plane; width: 0.5783552; height: 0.8192"
+          material="color: white; shader: flat"
+          animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+          animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
+        ></a-mixin>
+
+        <a-mixin
+          id="poster"
+          geometry="primitive: plane; width: 0.544768; height: 0.786432"
+          material="color: white; shader: flat"
+          position="0 0 0.005"
+        ></a-mixin>
+
+        <a-mixin
+          id="movieImage"
+          geometry="primitive: plane; width: 1.5; height: 0.81"
+          material="src: #ponyo; shader: flat; transparent: true;"
+          position="0 0.495 0.002"
+          fix-wrap 
+        ></a-mixin>
+      </a-assets>
+
+
+
+      <a-entity id="sceneHeader" position="0 2 -3">
+        
+
+        <!-- Título al lado de la imagen -->
+        <a-text value="Web Developer"
+        align="center"
+        color="#FFFFFF"
+        width="3"
+        position="0 2 -3"
+        rotation="0 0 0"
+        shader="msdf"
+        font="https://cdn.aframe.io/examples/ui/Viga-Regular.json">
+        </a-text>
+
+        <!-- Senior Web Developer/Designer -->
+        <a-entity id="seniorWebDev" position="3 2 0" rotation="0 -90 0">
+          <a-text value="Web Designer"
+          align="center"
+          color="#FFFFFF"
+          width="3"
+          position="0 0 0"
+          shader="msdf"
+          font="https://cdn.aframe.io/examples/ui/Viga-Regular.json">
+          </a-text>
+        </a-entity>
+
+        <!-- UI/UX Designer -->
+        <a-entity id="uiUxDesigner" position="0 2 3" rotation="0 180 0">
+          <a-text value="UI/UX Designer"
+          align="center"
+          color="#FFFFFF"
+          width="3"
+          position="0 0 0"
+          shader="msdf"
+          font="https://cdn.aframe.io/examples/ui/Viga-Regular.json">
+          </a-text>
+        </a-entity>
+
+        <!-- Graphic Designer -->
+        <a-entity id="graphicDesigner" position="-3 2 0" rotation="0 90 0">
+          <a-text value="Graphic Designer"
+          align="center"
+          color="#FFFFFF"
+          width="3"
+          position="0 0 0"
+          shader="msdf"
+          font="https://cdn.aframe.io/examples/ui/Viga-Regular.json">
+          </a-text>
+        </a-entity>
+
+
+
+      <!-- Fondo rojo (esfera) inicialmente invisible -->
+      <a-entity
+        id="background"
+        position="0 0 0"
+        geometry="primitive: sphere; radius: 2.0"
+        material="color: red; side: back; shader: flat"
+        scale="0.001 0.001 0.001"
+        visible="false"
+        class="raycastable"
+      ></a-entity>
+
+      <!-- Cámara con look-controls activo -->
+      <a-entity
+        position="0 1.7 0"
+        camera
+        look-controls="magicWindowTrackingEnabled: true; touchEnabled: true; mouseEnabled: true"
+      >
+        <a-entity
+          id="fadeBackground"
+          geometry="primitive: sphere; radius: 2.5"
+          material="color: #999999; side: back; shader: flat; blending: subtractive;"
+          visible="false"
+        ></a-entity>
+      </a-entity>
+
+      <!-- Hand controls (para VR, si los usas) -->
+      <a-entity id="leftHand" laser-controls="hand: left" raycaster="objects: .raycastable"></a-entity>
+      <a-entity id="rightHand" laser-controls="hand: right" raycaster="objects: .raycastable" line="color: #118A7E"></a-entity>
+
+      <!-- UI principal -->
+      <a-entity id="ui" position="6 1.6 0"></a-entity>
+        <!-- Poster menu con highlight -->
+        <a-entity id="menu" rotation="0 -180 0" highlight position="1 1.3 1.6">
+          <a-entity id="karigurashiButton" position="0 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #karigurashiPoster;" mixin="poster"></a-entity>
+          </a-entity>
+
+          <a-entity id="kazetachinuButton" position="1 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #kazetachinuPoster" mixin="poster"></a-entity>
+          </a-entity>
+
+          <!-- Botón original ponyoButton -->
+          <a-entity id="ponyoButton" position="2 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #ponyoPoster" mixin="poster"></a-entity>
+          </a-entity>
+        </a-entity>
+
+        </a-entity>
+      
+        <!-- Panel de información -->
+        <a-entity
+          id="infoPanel"
+          position="0 3.6 -1.5"
+          rotation="0 -180 0"
+          info-panel
+          visible="false"
+          scale="0.001 0.001 0.001"
+          geometry="primitive: plane; width: 1.5; height: 1.8"
+          material="color: #333333; shader: flat; transparent: false"
+          class="raycastable"
+        >
+          <a-entity
+            id="ponyoMovieImage"
+            mixin="movieImage"
+            material="src: #ponyo; repeat: 1.2 1; offset: 0.1 0"
+            visible="false"
+          ></a-entity>
+          <a-entity
+            id="kazetachinuMovieImage"
+            mixin="movieImage"
+            material="src: #kazetachinu; repeat: 1.2 1; offset: 0.1 0"
+            visible="false"
+          ></a-entity>
+          <a-entity
+            id="karigurashiMovieImage"
+            mixin="movieImage"
+            material="src: #karigurashi; repeat: 1.2 1; offset: 0.1 0"
+            visible="false"
+          ></a-entity>
+
+          <a-entity
+            id="movieTitle"
+            position="-0.68 -0.1 0"
+            text="shader: msdf; anchor: left; width: 2; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Ponyo (2003)"
+          ></a-entity>
+
+          <a-entity
+            id="movieDescription"
+            position="-0.68 -0.2 0"
+            text="baseline: top; shader: msdf; anchor: left; width: 1.4; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Lorem ipsum dolor sit amet..."
+          ></a-entity>
+        </a-entity>
+      </a-entity>
+
+    </a-scene>
+    <footer>
+      <a href="https://www.linkedin.com/in/tob%C3%ADas-etchelet-66350575/" target="_blank" class="footer-btn linkedin">LinkedIn</a>
+      <a href="https://api.whatsapp.com/send?phone=1141775078&text=Hello%20Tob%C3%ADas,%20my%20name%20is" target="_blank" class=" footer-btn whatsapp">WhatsApp</a>
+      <a href="mailto:tobiasetchelet@gmail.com" class=" footer-btn email">Email</a>
+    </footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  </body>
+</html>
+</html>

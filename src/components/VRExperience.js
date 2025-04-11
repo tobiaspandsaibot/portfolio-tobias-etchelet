@@ -1,118 +1,127 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './VRExperience.css';
+import { FiArrowLeft } from 'react-icons/fi';
 
-// Importaciones dinámicas de A-Frame
-const loadAFrame = () => {
-  // Cargar A-Frame solo cuando se necesite
-  if (document.querySelector('script[src="https://aframe.io/releases/1.4.0/aframe.min.js"]')) {
-    return Promise.resolve();
-  }
-  
-  const aframeScript = document.createElement('script');
-  aframeScript.src = 'https://aframe.io/releases/1.4.0/aframe.min.js';
-  aframeScript.async = true;
-  document.head.appendChild(aframeScript);
-
-  return new Promise((resolve) => {
-    aframeScript.onload = () => {
-      resolve();
-    };
-  });
-};
-
-const VRExperience = ({ isActive }) => {
-  const [vrExperienceLoaded, setVrExperienceLoaded] = useState(false);
-  const [vrContent, setVrContent] = useState('');
-  const [visible, setVisible] = useState(false);
-
-  // Cargar el contenido de la experiencia VR
-  useEffect(() => {
-    const loadVRContent = async () => {
-      try {
-        // Si ya tienes tu archivo HTML de experiencia VR, puedes cargarlo así:
-        const response = await fetch('/vr-experience.html');
-        const html = await response.text();
-        
-        // Extraer solo la parte del a-scene
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const scene = doc.querySelector('a-scene');
-        
-        if (scene) {
-          setVrContent(scene.outerHTML);
-          setVrExperienceLoaded(true);
-        } else {
-          // Si no se encuentra una escena, usa el contenido predeterminado
-          setVrContent(getDefaultVRContent());
-          setVrExperienceLoaded(true);
-        }
-      } catch (error) {
-        console.error('Error al cargar la experiencia VR:', error);
-        // En caso de error, usar el contenido predeterminado
-        setVrContent(getDefaultVRContent());
-        setVrExperienceLoaded(true);
-      }
-    };
-
-    if (isActive && !vrExperienceLoaded) {
-      loadAFrame().then(() => {
-        loadVRContent();
-      });
-    }
-  }, [isActive, vrExperienceLoaded]);
-
-  // Efecto para animar la entrada y salida
-  useEffect(() => {
-    if (isActive) {
-      const timer = setTimeout(() => {
-        setVisible(true);
-      }, 100); // Pequeño retraso para asegurar que la transición Matrix esté avanzada
-      return () => clearTimeout(timer);
-    } else {
-      setVisible(false);
-    }
-  }, [isActive]);
-
-  useEffect(() => {
-    // Cuando el componente se activa, desactivar el scroll
-    if (isActive) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isActive]);
-
-  const getDefaultVRContent = () => {
-    return `
-      <a-scene embedded>
-        <a-sky color="#1A1A2E"></a-sky>
-        <a-entity light="type: ambient; color: #BBB; intensity: 0.5"></a-entity>
-        <a-entity light="type: directional; color: #FFF; intensity: 1" position="-1 1 2"></a-entity>
-        
-        <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#2A2A4A"></a-plane>
-        
-        <a-entity position="0 1.6 -3">
-          <a-text value="Portfolio de Tobías Etchelet" color="#FFF" align="center" width="6" position="0 1.5 0"></a-text>
-          <a-text value="Diseñador Web & UX/UI" color="#5D54C7" align="center" width="4" position="0 1.2 0"></a-text>
-        </a-entity>
-        
-        <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
-      </a-scene>
-    `;
-  };
-
-  // Si no está activo o el contenido no está cargado, no renderizar nada
+const VRExperience = ({ isActive, onExit }) => {
   if (!isActive) return null;
 
+  const handleExit = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onExit) {
+      onExit();
+    }
+  };
+
   return (
-    <div className={`vr-experience-container ${visible ? 'visible' : ''}`}>
-      <div className="vr-content" dangerouslySetInnerHTML={{ __html: vrContent }} />
+    <div className="vr-experience-container" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 1000 }}>
+      <button
+        className="exit-vr-button"
+        onClick={handleExit}
+        style={{
+          position: 'absolute',
+          top: '20px',
+          left: '20px',
+          zIndex: 1001,
+          backgroundColor: '#000',
+          color: '#fff',
+          border: 'none',
+          padding: '10px',
+          borderRadius: '8px',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px'
+        }}
+      >
+        <FiArrowLeft />
+        <span>Volver al Portfolio</span>
+      </button>
+
+      <div className="vr-content" style={{ width: '100%', height: '100%' }}>
+        <a-scene
+          embedded
+          background="color: #000000"
+          cursor="rayOrigin: mouse; fuse: false"
+          raycaster="objects: .raycastable"
+        >
+          <a-assets>
+            <img id="kazetachinu" src="/assets/Screenshot_1.png" crossorigin="anonymous" />
+            <img id="kazetachinuPoster" src="/assets/developer.jpeg" crossorigin="anonymous" />
+            <img id="ponyo" src="/assets/portfolioinprocess.png" crossorigin="anonymous" />
+            <img id="ponyoPoster" src="/assets/OIG-20.jpeg" crossorigin="anonymous" />
+            <img id="karigurashi" src="/assets/tobi-traje.png" crossorigin="anonymous" />
+            <img id="karigurashiPoster" src="/assets/tobias.jpg" crossorigin="anonymous" />
+            <img id="stars" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" crossorigin="anonymous" />
+
+            <a-mixin id="frame" geometry="primitive: plane; width: 0.5783552; height: 0.8192" material="color: white; shader: flat" animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter" animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave" />
+            <a-mixin id="poster" geometry="primitive: plane; width: 0.544768; height: 0.786432" material="color: white; shader: flat" position="0 0 0.005" />
+            <a-mixin id="movieImage" geometry="primitive: plane; width: 1.5; height: 0.81" material="src: #ponyo; shader: flat; transparent: true;" position="0 0.495 0.002" fix-wrap />
+          </a-assets>
+
+          <a-sky src="#stars" rotation="0 -90 0"></a-sky>
+
+          <a-entity id="sceneHeader" position="0 2 -3">
+            <a-text
+              value="Web Developer"
+              align="center"
+              color="#FFFFFF"
+              width="3"
+              position="0 0 0"
+              rotation="0 0 0"
+              shader="msdf"
+              font="https://cdn.aframe.io/examples/ui/Viga-Regular.json"
+            />
+          </a-entity>
+
+          <a-entity id="seniorWebDev" position="3 2 0" rotation="0 -90 0">
+            <a-text
+              value="Web Designer"
+              align="center"
+              color="#FFFFFF"
+              width="3"
+              position="0 0 0"
+              shader="msdf"
+              font="https://cdn.aframe.io/examples/ui/Viga-Regular.json"
+            />
+          </a-entity>
+
+          <a-entity id="uiUxDesigner" position="0 2 3" rotation="0 180 0">
+            <a-text
+              value="UI/UX Designer"
+              align="center"
+              color="#FFFFFF"
+              width="3"
+              position="0 0 0"
+              shader="msdf"
+              font="https://cdn.aframe.io/examples/ui/Viga-Regular.json"
+            />
+          </a-entity>
+
+          <a-entity id="graphicDesigner" position="-3 2 0" rotation="0 90 0">
+            <a-text
+              value="Graphic Designer"
+              align="center"
+              color="#FFFFFF"
+              width="3"
+              position="0 0 0"
+              shader="msdf"
+              font="https://cdn.aframe.io/examples/ui/Viga-Regular.json"
+            />
+          </a-entity>
+
+          <a-entity id="background" position="0 0 0" geometry="primitive: sphere; radius: 2.0" material="color: red; side: back; shader: flat" scale="0.001 0.001 0.001" visible="false" class="raycastable" />
+
+          <a-entity position="0 1.7 0" camera look-controls="magicWindowTrackingEnabled: true; touchEnabled: true; mouseEnabled: true">
+            <a-entity id="fadeBackground" geometry="primitive: sphere; radius: 2.5" material="color: #999999; side: back; shader: flat; blending: subtractive;" visible="false" />
+          </a-entity>
+
+          <a-entity id="leftHand" laser-controls="hand: left" raycaster="objects: .raycastable" />
+          <a-entity id="rightHand" laser-controls="hand: right" raycaster="objects: .raycastable" line="color: #118A7E" />
+        </a-scene>
+      </div>
     </div>
   );
 };
 
-export default VRExperience; 
+export default VRExperience;

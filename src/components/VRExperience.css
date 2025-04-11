@@ -4,14 +4,19 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 999;
+    z-index: 1000;
     background-color: #000;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 
-.vr-experience-container.visible {
-    opacity: 1;
+/* Ocultar el botón de entrar en VR de A-Frame */
+.a-enter-vr {
+    display: none !important;
+}
+
+/* Asegurar que la escena VR ocupe todo el espacio */
+.a-scene {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .vr-content {
@@ -19,7 +24,79 @@
     height: 100%;
 }
 
-/* Eliminar header default de A-Frame */
-.a-enter-vr {
+.vr-error {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: white;
+    z-index: 10000;
+}
+
+.vr-error p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.vr-error button {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.vr-error button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.exit-vr-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+}
+
+.exit-vr-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+}
+
+.exit-vr-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+.exit-vr-button span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.a-enter-vr-button {
     display: none !important;
 }

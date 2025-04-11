@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.af01caa1.css",
-    "main.js": "./static/js/main.d7d29b2a.js",
+    "main.css": "./static/css/main.9d84ec46.css",
+    "main.js": "./static/js/main.c7a4b3ea.js",
     "static/js/206.09b0e213.chunk.js": "./static/js/206.09b0e213.chunk.js",
     "static/media/tobias-etchelet.jpg": "./static/media/tobias-etchelet.36fd1f3220a80a9f5eb3.jpg",
     "static/media/clazzical.png": "./static/media/clazzical.02c1812315f745080497.png",
@@ -15,7 +15,7 @@
     "index.html": "./index.html"
   },
   "entrypoints": [
-    "static/css/main.af01caa1.css",
-    "static/js/main.d7d29b2a.js"
+    "static/css/main.9d84ec46.css",
+    "static/js/main.c7a4b3ea.js"
   ]
 }

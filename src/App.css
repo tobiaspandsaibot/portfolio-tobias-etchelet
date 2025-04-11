@@ -171,3 +171,67 @@ body {
   transform: translateZ(40px);
 } 
 
+.vr-toggle-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.vr-toggle-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.vr-toggle-button span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Estilos para el modo VR */
+.vr-mode {
+  overflow: hidden;
+}
+
+.vr-mode .vr-experience-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: #000;
+}
+
+.vr-mode .vr-content {
+  width: 100%;
+  height: 100%;
+}
+
+/* Asegurar que el contenido VR esté por encima de todo */
+.vr-experience-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+/* Mantener el dashboard visible */
+.dashboard-container {
+  position: relative;
+  z-index: 1;
+}
+
