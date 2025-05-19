@@ -3,13 +3,15 @@ import './ContactSection.css';
 import { FaLinkedin, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Registrar el plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 const ContactSection = () => {
+  const { getTranslation } = useLanguage();
   const contactRef = useRef(null);
-  const whatsappMessage = encodeURIComponent("Hola Tobias Etchelet, mi nombre es ");
+  const whatsappMessage = encodeURIComponent(getTranslation('whatsappMessage'));
   const whatsappLink = `https://wa.me/5491141775078?text=${whatsappMessage}`;
 
   useEffect(() => {
@@ -33,9 +35,9 @@ const ContactSection = () => {
   return (
     <div className="contact-wrapper" ref={contactRef}>
       <section className="contact-section">
-        <h2>Contacto</h2>
+        <h2>{getTranslation('contactTitle')}</h2>
         <p className="contact-description">
-          ¿Tienes un proyecto en mente? Hablemos :) 
+          {getTranslation('contactDescription')}
         </p>
         
         <div className="social-links">
@@ -45,13 +47,13 @@ const ContactSection = () => {
             rel="noopener noreferrer"
             className="social-link"
           >
-            <FaLinkedin /> LinkedIn
+            <FaLinkedin /> {getTranslation('linkedin')}
           </a>
           <a 
             href="mailto:tobiasetchelet@gmail.com"
             className="social-link"
           >
-            <FaEnvelope /> Email
+            <FaEnvelope /> {getTranslation('email')}
           </a>
           <a 
             href={whatsappLink}
@@ -59,7 +61,7 @@ const ContactSection = () => {
             rel="noopener noreferrer"
             className="social-link whatsapp-link"
           >
-            <FaWhatsapp /> WhatsApp
+            <FaWhatsapp /> {getTranslation('whatsapp')}
           </a>
         </div>
       </section>
@@ -67,4 +69,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection; 
+export default ContactSection;

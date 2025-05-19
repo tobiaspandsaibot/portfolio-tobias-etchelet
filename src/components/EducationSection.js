@@ -1,62 +1,64 @@
 import React from 'react';
 import './EducationSection.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const EducationSection = () => {
+  const { getTranslation } = useLanguage();
   return (
     <section className="education-section">
-      <h2>Educación</h2>
+      <h2>{getTranslation('educationTitle')}</h2>
       
       <div className="education-item glass-card">
         <div className="education-header">
-          <h3>Técnico Superior en Diseño de Interfaces Digitales</h3>
+          <h3>{getTranslation('education1Title')}</h3>
           <span className="education-date">2018 – 2024</span>
         </div>
         <div className="education-details">
-          <p><strong>Institución:</strong> ORT Argentina</p>
-          <p>Actualmente en proceso las últimas materias de la carrera. </p>
+          <p><strong>{getTranslation('institution')}:</strong> ORT Argentina</p>
+          <p>{getTranslation('education1Description')}</p>
         </div>
       </div>
 
       <div className="education-item glass-card">
         <div className="education-header">
-          <h3>Diseñador Gráfico</h3>
+          <h3>{getTranslation('education2Title')}</h3>
           <span className="education-date">2018 – 2024</span>
         </div>
         <div className="education-details">
-          <p><strong>Institución:</strong> ORT Argentina</p>
-          <p> Diseño gráfico, digital e impresión. Especialización en creación de logotipos, isotipos y branding, incluyendo la creación de manual de identidad corporativo.</p>
+          <p><strong>{getTranslation('institution')}:</strong> ORT Argentina</p>
+          <p>{getTranslation('education2Description')}</p>
         </div>
       </div>
 
       <div className="education-item glass-card">
         <div className="education-header">
-          <h3>Diseñador Gráfico – UBA (FADU)</h3>
+          <h3>{getTranslation('education3Title')}</h3>
           <span className="education-date">2016 – 2018</span>
         </div>
         <div className="education-details">
-          <p><strong>Institución:</strong> Universidad de Buenos Aires (FADU)</p>
-          <p>Cursé la carrera durante 2 años antes de cambiar a ORT Argentina por su enfoque digital.</p>
+          <p><strong>{getTranslation('institution')}:</strong> Universidad de Buenos Aires (FADU)</p>
+          <p>{getTranslation('education3Description')}</p>
         </div>
       </div>
 
       <div className="education-item glass-card">
         <div className="education-header">
-          <h3>Diseñador Web</h3>
+          <h3>{getTranslation('education4Title')}</h3>
           <span className="education-date">2018 – 2024</span>
         </div>
         <div className="education-details">
-          <p><strong>Institución:</strong> ORT Argentina</p>
-          <p>Especialización en diseño y desarrollo de sitios web, abarcando desde la maquetación hasta el diseño final, ofreciendo soluciones de calidad profesional.</p>
+          <p><strong>{getTranslation('institution')}:</strong> ORT Argentina</p>
+          <p>{getTranslation('education4Description')}</p>
         </div>
       </div>
 
       <div className="education-item glass-card">
         <div className="education-header">
-          <h3>Ilustrador Digital – Puerta 18</h3>
+          <h3>{getTranslation('education5Title')}</h3>
           <span className="education-date">2015 – 2016</span>
         </div>
         <div className="education-details">
-          <p>Espacio gratuito para jóvenes de 13 a 24 años, donde se fomentan habilidades y vocaciones a través del uso de herramientas tecnológicas.</p>
+          <p>{getTranslation('education5Description')}</p>
         </div>
       </div>
     </section>

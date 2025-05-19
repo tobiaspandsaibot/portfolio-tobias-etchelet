@@ -32,11 +32,12 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  background-color: var(--bg);
+  background-color: transparent;
 }
 
 .gradient-bg {
-  position: fixed;
+  /* Estos estilos se aplicarán solo a los gradientes antiguos */
+  position: absolute;
   width: 60vw;
   height: 60vw;
   border-radius: 50%;
@@ -186,7 +187,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 30px rgba(93, 84, 199, 0.4);
 }
 
 .vr-toggle-button:hover {
@@ -197,6 +198,11 @@ body {
 .vr-toggle-button span {
   font-size: 1rem;
   font-weight: 500;
+}
+
+.vr-mode .vr-toggle-button svg {
+  width: 15px;
+  height: 15px;
 }
 
 /* Estilos para el modo VR */

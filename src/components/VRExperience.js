@@ -3,7 +3,17 @@ import './VRExperience.css';
 import { FiArrowLeft } from 'react-icons/fi';
 
 const VRExperience = ({ isActive, onExit }) => {
-  if (!isActive) return null;
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    if (isActive) {
+      setIsMounted(true);
+    } else {
+      setIsMounted(false);
+    }
+  }, [isActive]);
+
+  if (!isActive || !isMounted) return null;
 
   const handleExit = (e) => {
     e.preventDefault();
@@ -14,7 +24,15 @@ const VRExperience = ({ isActive, onExit }) => {
   };
 
   return (
-    <div className="vr-experience-container" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 1000 }}>
+    <div className="vr-experience-container" style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100vw',
+      height: '100vh',
+      zIndex: 1000,
+      pointerEvents: 'auto'
+    }}>
       <button
         className="exit-vr-button"
         onClick={handleExit}
@@ -123,5 +141,7 @@ const VRExperience = ({ isActive, onExit }) => {
     </div>
   );
 };
+
+VRExperience.displayName = 'VRExperience';
 
 export default VRExperience;
