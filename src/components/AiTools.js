@@ -1,150 +1,151 @@
 import React, { useState } from 'react';
 import {
   FaPaintBrush,
+  FaLanguage,
   FaVideo,
-  FaRegComment,
-  FaPalette,
-  FaCamera,
-  FaSearch,
-  FaMusic,
   FaCode,
   FaRobot,
   FaChevronDown,
+  FaPalette,
+  FaCamera,
+  FaSearch,
+  FaMusic
 } from 'react-icons/fa';
 import './AiTools.css';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const AiTools = () => {
-  const [activeCategory, setActiveCategory] = useState(null);
   const { getTranslation } = useLanguage();
+  const [hoveredCategory, setHoveredCategory] = useState(null);
 
   const categories = {
-    [getTranslation('generativeAI')]: {
+    [getTranslation('imageGeneration')]: {
       icon: <FaPaintBrush className="category-icon" />,
       items: [
-        'BlueWillow AI',
-        'DALL-E',
         'Midjourney',
-        'Stable Diffusion',
-        'Leonardo.ai'
+        'DALL-E',
+        'Leonardo.ai',
+        'BlueWillow AI',
+        'Befake',
+        'Hotpot.ai',
+        'Kaedim',
+        'Immersity AI',
+        'Backflip AI',
+        'Faceless'
       ]
     },
     [getTranslation('videoAnimation')]: {
       icon: <FaVideo className="category-icon" />,
       items: [
-        'Runway ML',
-        'Synthesia',
-        'D-ID',
-        'Deepseek AI',
-        'Luma AI'
+        'Runway',
+        'Vidu AI',
+        'RenderNet AI',
+        'HeyGen',
+        'Minimax AI',
+        'Animated Drawings',
+        'Creatify',
+        'Uthana',
+        'AnimateDiff'
       ]
     },
-    [getTranslation('textChatbots')]: {
-      icon: <FaRegComment className="category-icon" />,
+    [getTranslation('languageModels')]: {
+      icon: <FaLanguage className="category-icon" />,
       items: [
-        'ChatGPT',
+        'GPT-4',
         'Claude',
         'Bard',
         'Gemini',
-        'Claude 3'
+        'Perplexity AI',
+        'Character.ai',
+        'Humanize AI'
+      ]
+    },
+    [getTranslation('codeGeneration')]: {
+      icon: <FaCode className="category-icon" />,
+      items: [
+        'GitHub Copilot',
+        'Replit',
+        'Flowise',
+        'Langflow',
+        'KLing AI',
+        'Noisee',
+        'Suno'
       ]
     },
     [getTranslation('designTools')]: {
       icon: <FaPalette className="category-icon" />,
       items: [
-        'Figma',
-        'Adobe Creative Cloud',
-        'Sketch',
-        'Canva',
-        'Procreate'
-      ]
-    },
-    [getTranslation('socialMedia')]: {
-      icon: <FaCamera className="category-icon" />,
-      items: [
-        'Threads',
-        'Instagram',
-        'Twitter',
-        'Facebook',
-        'LinkedIn'
-      ]
-    },
-    [getTranslation('search')]: {
-      icon: <FaSearch className="category-icon" />,
-      items: [
-        'Google',
-        'Bing',
-        'DuckDuckGo',
-        'Ecosia',
-        'Yandex'
+        'Autodesigner',
+        'Galileo AI',
+        'Locofy.ai',
+        '10Web AI Website Builder'
       ]
     },
     [getTranslation('audioTools')]: {
       icon: <FaMusic className="category-icon" />,
       items: [
-        'Soundtrap',
-        'BandLab',
-        'Audacity',
-        'Adobe Audition',
-        'Logic Pro'
+        'ElevenLabs',
+        'Musicfy',
+        'Krisp',
+        'Resemble AI',
+        'Lalal.ai',
+        'Beatoven'
       ]
     },
-    [getTranslation('codeTools')]: {
-      icon: <FaCode className="category-icon" />,
+    [getTranslation('researchTools')]: {
+      icon: <FaSearch className="category-icon" />,
       items: [
-        'VS Code',
-        'IntelliJ IDEA',
-        'PyCharm',
-        'WebStorm',
-        'Android Studio'
-      ]
-    },
-    [getTranslation('research')]: {
-      icon: <FaRobot className="category-icon" />,
-      items: [
+        'Scispace',
+        'Glasp',
+        'Perplexity AI',
         'Google Scholar',
-        'Microsoft Academic',
-        'Semantic Scholar',
-        'ResearchGate',
-        'Academia.edu'
+        'Semantic Scholar'
       ]
     },
-    [getTranslation('otherTools')]: {
+    [getTranslation('socialMedia')]: {
+      icon: <FaCamera className="category-icon" />,
+      items: [
+        'PromptPal',
+        'GoCharlie',
+        'Pictory AI',
+        'Opus Clip'
+      ]
+    },
+    [getTranslation('communicationTools')]: {
       icon: <FaChevronDown className="category-icon" />,
       items: [
+        'Monica',
+        'Compose AI',
+        'Remail',
+        'Jasper',
         'Notion',
-        'Trello',
-        'Asana',
-        'Slack',
-        'Zoom'
+        'Trello'
       ]
     }
   };
 
-  const toggleCategory = (category) => {
-    setActiveCategory(activeCategory === category ? null : category);
-  };
-
   return (
-    <div className="ai-tools">
+    <div className="education-section rounded-borders">
       <h2>{getTranslation('aiToolsTitle')}</h2>
       <div className="categories">
         {Object.entries(categories).map(([category, { icon, items }]) => (
           <div
             key={category}
-            className={`category ${activeCategory === category ? 'active' : ''}`}
-            onClick={() => toggleCategory(category)}
+            className="category"
+            onMouseEnter={() => setHoveredCategory(category)}
+            onMouseLeave={() => setHoveredCategory(null)}
           >
             <div className="category-header">
               {icon}
               <span>{category}</span>
+              <FaChevronDown className="arrow" />
             </div>
-            {activeCategory === category && (
+            {hoveredCategory === category && (
               <div className="category-items">
                 {items.map((item, index) => (
-                  <div key={index} className="item">
+                  <span key={index} className="item-tag">
                     {item}
-                  </div>
+                  </span>
                 ))}
               </div>
             )}

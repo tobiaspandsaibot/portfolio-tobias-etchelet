@@ -1,10 +1,13 @@
 import React from 'react';
 import './SoftwareSkills.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const SoftwareSkills = () => {
+  const { getTranslation } = useLanguage();
+
   const softwareCategories = [
     {
-      level: 'Nivel Intermedio',
+      level: getTranslation('softwareLevelIntermediate'),
       software: [
         'Adobe Lightroom',
         'Visual Studio Code',
@@ -17,7 +20,7 @@ const SoftwareSkills = () => {
       ]
     },
     {
-      level: 'Nivel Avanzado',
+      level: getTranslation('softwareLevelAdvanced'),
       software: [
         'Figma',
         'WebFlow',
@@ -34,7 +37,7 @@ const SoftwareSkills = () => {
       ]
     },
     {
-      level: 'Nivel Profesional',
+      level: getTranslation('softwareLevelProfessional'),
       software: [
         'Adobe XD',
         'Adobe Photoshop',
@@ -51,8 +54,8 @@ const SoftwareSkills = () => {
   ];
 
   return (
-    <div className="software-skills glass-card">
-      <h2 className="section-title">Software</h2>
+    <div className="education-section">
+      <h2 className="section-title ">{getTranslation('softwareTitle')}</h2>
       
       {softwareCategories.map((category, index) => (
         <div key={index} className="software-category">
@@ -70,4 +73,4 @@ const SoftwareSkills = () => {
   );
 };
 
-export default SoftwareSkills; 
+export default SoftwareSkills;

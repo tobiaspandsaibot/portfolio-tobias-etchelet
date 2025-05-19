@@ -27,8 +27,8 @@ const ProjectsSection = () => {
       title: getTranslation('project2Title'),
       description: getTranslation('project2Description'),
       tech: getTranslation('project2Tech').split(','),
-      link: 'https://www.linkedin.com/company/sp-saibot',
-      year: '2020-2024',
+      link: 'https://sns-website.vercel.app/',
+      year: '2024',
       image: snsImage,
       className: 'sns-image'
     },
@@ -37,30 +37,30 @@ const ProjectsSection = () => {
       title: getTranslation('project3Title'),
       description: getTranslation('project3Description'),
       tech: getTranslation('project3Tech').split(','),
-      link: 'https://eljardindelaplaza.edu.ar/',
-      year: '2020-2024',
-      image: project1Image,
-      className: 'jardin-image'
+      link: 'https://www.neorelax.com.ar/',
+      year: '2024',
+      image: project3Image,
+      className: 'neorelax-image'
     },
     {
       id: 4,
       title: getTranslation('project4Title'),
       description: getTranslation('project4Description'),
       tech: getTranslation('project4Tech').split(','),
-      link: 'https://sgastronomicas.com.ar/',
-      year: '2020-2024',
+      link: 'https://www.sns.com.ar/',
+      year: '2024',
       image: project2Image,
-      className: 'soluciones-image'
+      className: 'sns-image'
     },
     {
       id: 5,
       title: getTranslation('project5Title'),
       description: getTranslation('project5Description'),
       tech: getTranslation('project5Tech').split(','),
-      link: 'https://neorelax.com.ar/',
-      year: '2020-2024',
-      image: project3Image,
-      className: 'neorelax-image'
+      link: 'https://www.linkedin.com/company/babz-llc/',
+      year: '2024',
+      image: project1Image,
+      className: 'babz-image'
     },
     {
       id: 6,
@@ -75,7 +75,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="projects-section">
+    <div className="education-section rounded-borders">
       <h2>{getTranslation('projectsTitle')}</h2>
       <div className="projects-grid">
         {projects.map((project) => (
@@ -99,13 +99,13 @@ const ProjectsSection = () => {
             </div>
             <div className="project-footer">
               <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                Ver proyecto <FaExternalLinkAlt className="link-icon" />
+                {getTranslation('viewProject')} <FaExternalLinkAlt className="link-icon" />
               </a>
             </div>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

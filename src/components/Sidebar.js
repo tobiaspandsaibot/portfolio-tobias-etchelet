@@ -12,19 +12,17 @@ import {
 } from "react-icons/fi";
 import { useLanguage } from "../contexts/LanguageContext";
 
-
-
 // Registrar el plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 const Sidebar = () => {
   const sidebarRef = useRef(null);
   const { getTranslation } = useLanguage();
+  let sidebarTrigger = null;
 
   useEffect(() => {
     const sidebar = sidebarRef.current;
     const isMobile = window.innerWidth <= 1200;
-    let sidebarTrigger = null;
 
     if (!isMobile) {
       sidebarTrigger = ScrollTrigger.create({
@@ -39,10 +37,10 @@ const Sidebar = () => {
       });
     }
 
-    // Limpieza al desmontar el componente
     return () => {
       if (sidebarTrigger) {
         sidebarTrigger.kill();
+        sidebarTrigger = null;
       }
     };
   }, []);

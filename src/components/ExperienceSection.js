@@ -1,6 +1,6 @@
 import React from 'react';
 import './ExperienceSection.css';
-import { FaBriefcase} from 'react-icons/fa';
+import { FaBriefcase } from 'react-icons/fa';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const ExperienceSection = () => {
@@ -33,20 +33,34 @@ const ExperienceSection = () => {
       responsibilities: getTranslation('experience3Responsibilities').split(',')
     },
     {
-      title: getTranslation('experience4Title'),
+      title: 'Productor / Jefe de Depósito',
       company: 'BAM EVENT PLANNERS',
-      period: getTranslation('experience4Period'),
-      location: getTranslation('experience4Location'),
-      description: getTranslation('experience4Description'),
-      responsibilities: getTranslation('experience4Responsibilities').split(',\n')
+      period: 'Enero 2014 – Octubre 2015 (1 año 10 meses)',
+      location: 'Argentina',
+      description: 'Organización de eventos corporativos y sociales (coordinación, producción, logística y montajes).',
+      responsibilities: [
+        'Pre-organización y logística de ambientaciones y estructuras.',
+        'Realización de presentaciones en PowerPoint para clientes.',
+        'Asistencia en producción durante eventos.',
+        'Coordinación con actores y artistas.',
+        'Supervisión de seguridad en depósito y eventos.',
+        'Logística de montajes y desmontajes.',
+        'Realización de seguros RSA para eventos y promociones en vía pública.'
+      ]
     },
     {
-      title: getTranslation('experience5Title'),
+      title: 'Asistente Administrativo Sénior',
       company: 'Shimano Latin America Representación Comercial Ltda.',
-      period: getTranslation('experience5Period'),
-      location: getTranslation('experience5Location'),
-      description: getTranslation('experience5Description'),
-      responsibilities: getTranslation('experience5Responsibilities').split(',\n')
+      period: 'Mayo 2013 – Octubre 2014 (1 año 6 meses)',
+      location: 'Argentina',
+      description: '',
+      responsibilities: [
+        'Control de stock de muestras de mercadería.',
+        'Gestión de pagos a proveedores, cobranzas y tareas bancarias.',
+        'Elaboración de presupuestos y presentaciones.',
+        'Manejo de caja chica para distintos departamentos.',
+        'Control de gastos post eventos.'
+      ]
     }
   ];
 
@@ -57,47 +71,30 @@ const ExperienceSection = () => {
   };
 
   return (
-    <>
-      <h2 className="section-title">Experiencia</h2>
-      <div className="experience-section glass-card">
-        <div className="timeline">
-          <div className="timeline-section">
-            <div className="timeline-header">
-              <div className="timeline-icon work">
-                <FaBriefcase />
-              </div>
-              <h3>Experiencia Laboral</h3>
-            </div>
-            {experiences.map((exp, index) => (
-              <div 
-                key={index} 
-                className="timeline-item"
-                onClick={() => handleCompanyClick(exp.companyUrl)}
-                style={{ cursor: exp.companyUrl ? 'pointer' : 'default' }}
-              >
-                <div className="timeline-dot"></div>
-                <div className="timeline-content">
-                  <div className="timeline-title-row">
-                    <h4>{exp.title}</h4>
-                    <span className="timeline-period">{exp.period}</span>
-                  </div>
-                  <div className="timeline-company">{exp.company} - {exp.location}</div>
-                  {exp.description && <p className="timeline-description">{exp.description}</p>}
-                  {exp.responsibilities.length > 0 && (
-                    <ul className="timeline-responsibilities">
-                      {exp.responsibilities.map((resp, idx) => (
-                        <li key={idx}>{resp}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-            ))}
+    <div className="education-section">
+      <h2>{getTranslation('experienceTitle')}</h2>
+
+      <div className="timeline">
+        <div className="timeline-section">
+          <div className="timeline-header">
+
+
           </div>
-        </div>
-      </div>
-    </>
-  );
+
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className="timeline-item"
+              onClick={() => handleCompanyClick(exp.companyUrl)}
+              style={{ cursor: exp.companyUrl ? 'pointer' : 'default' }}
+            >
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-title-row">
+                  <h4>{exp.title}</h4>
+                  <span className="timeline-period">{exp.period}</span>
+                </div>
+                <div className="timeline-company">{exp.company} - {exp.location}</div>
                 {exp.description && <p className="timeline-description">{exp.description}</p>}
                 {exp.responsibilities.length > 0 && (
                   <ul className="timeline-responsibilities">
@@ -109,7 +106,7 @@ const ExperienceSection = () => {
               </div>
             </div>
           ))}
-        </div>    
+        </div>
       </div>
     </div>
   );

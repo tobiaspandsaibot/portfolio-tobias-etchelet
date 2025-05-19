@@ -1,18 +1,20 @@
 import React from 'react';
 import './UxUiSection.css';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Importar imágenes (asegúrate de que existan en la carpeta assets)
 import bulgariImage from '../assets/bulgari.png';
 import burgerBotsImage from '../assets/burger-bot.png';
 
 const UxUiSection = () => {
+  const { getTranslation } = useLanguage();
   const projects = [
     {
       id: 1,
-      title: 'Bulgari',
-      description: 'Rediseño de la experiencia de usuario para la tienda online de la marca de lujo.',
-      tech: ['Figma', 'UX Research', 'Prototipado', 'User Testing'],
+      title: getTranslation('project1Title'),
+      description: getTranslation('project1Description'),
+      tech: getTranslation('project1Tech').split(','),
       link: 'https://www.figma.com/proto/trUqjo2lR2L4imHRq2zdxg/BULGARI?type=design&node-id=2-104&t=Njlt4884jBwx21Vo-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=4%3A2',
       year: '2023',
       image: bulgariImage,
@@ -20,9 +22,9 @@ const UxUiSection = () => {
     },
     {
       id: 2,
-      title: 'Burger Bots',
-      description: 'Aplicación móvil para cadena de restaurantes con sistema de pedidos automatizado.',
-      tech: ['Adobe XD', 'UI Design', 'Mobile First', 'User Testing'],
+      title: getTranslation('project2Title'),
+      description: getTranslation('project2Description'),
+      tech: getTranslation('project2Tech').split(','),
       link: 'https://xd.adobe.com/view/5f9f6f8d-9cda-47aa-89fb-b1e02c8d84dd-0acc/?fullscreen&hints=off',
       year: '2022',
       image: burgerBotsImage,
@@ -31,8 +33,8 @@ const UxUiSection = () => {
   ];
 
   return (
-    <section className="uxui-section">
-      <h2>Diseños UX/UI</h2>
+    <div className="education-section rounded-borders">
+      <h2>{getTranslation('uxuiTitle')}</h2>
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.id} className="project-card glass-card">
@@ -55,14 +57,14 @@ const UxUiSection = () => {
             </div>
             <div className="project-footer">
               <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                Ver proyecto <FaExternalLinkAlt className="link-icon" />
+                {getTranslation('viewProject')} <FaExternalLinkAlt className="link-icon" />
               </a>
             </div>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 
-export default UxUiSection; 
+export default UxUiSection;

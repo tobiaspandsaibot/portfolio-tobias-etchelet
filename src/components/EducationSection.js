@@ -6,7 +6,7 @@ const EducationSection = () => {
   const { getTranslation } = useLanguage();
   return (
     <section className="education-section">
-      <h2>{getTranslation('educationTitle')}</h2>
+      <h2>{getTranslation('education')}</h2>
       
       <div className="education-item glass-card">
         <div className="education-header">
@@ -36,7 +36,7 @@ const EducationSection = () => {
           <span className="education-date">2016 – 2018</span>
         </div>
         <div className="education-details">
-          <p><strong>{getTranslation('institution')}:</strong> Universidad de Buenos Aires (FADU)</p>
+          <p><strong>{getTranslation('institution')}:</strong> University of Buenos Aires (FADU)</p>
           <p>{getTranslation('education3Description')}</p>
         </div>
       </div>
@@ -65,4 +65,4 @@ const EducationSection = () => {
   );
 };
 
-export default EducationSection; 
+export default EducationSection;

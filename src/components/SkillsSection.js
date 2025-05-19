@@ -67,8 +67,8 @@ const SkillsSection = () => {
   ];
 
   return (
-    <div className="skills-section glass-card">
-      <h2 className="section-title">Habilidades</h2>
+    <div className="education-section">
+      <h2>{getTranslation('skillsTitle')}</h2>
       
       <div className="skills-grid">
         {skillCategories.map((category) => (
@@ -87,16 +87,16 @@ const SkillsSection = () => {
       </div>
       
       <div className="language-skills">
-        <h3>Idiomas</h3>
+        <h3>{getTranslation('languagesTitle')}</h3>
         <div className="language-skill">
           <div className="language-name">
-            <span>Inglés</span>
-            <span className="language-level">C1 - Avanzado</span>
+            <span>{getTranslation('english')}</span>
+            <span className="language-level">{getTranslation('englishLevel')}</span>
           </div>
           <div className="language-progress">
             <div className="language-progress-bar" style={{ width: '90%' }}></div>
           </div>
-          <p className="language-details">First Certificate in English (FCE) – Bilingüe – Nativo</p>
+          <p className="language-details">{getTranslation('englishDetails')}</p>
         </div>
       </div>
     </div>
