@@ -1,21 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.9d84ec46.css",
-    "main.js": "./static/js/main.c7a4b3ea.js",
-    "static/js/206.09b0e213.chunk.js": "./static/js/206.09b0e213.chunk.js",
-    "static/media/tobias-etchelet.jpg": "./static/media/tobias-etchelet.36fd1f3220a80a9f5eb3.jpg",
+    "main.css": "./static/css/main.33ef2be2.css",
+    "main.js": "./static/js/main.83cf7543.js",
+    "static/js/453.3ea09d55.chunk.js": "./static/js/453.3ea09d55.chunk.js",
     "static/media/clazzical.png": "./static/media/clazzical.02c1812315f745080497.png",
     "static/media/babz-website.png": "./static/media/babz-website.aee2fdd39a272f9b3ff0.png",
     "static/media/snswebsite.png": "./static/media/snswebsite.fc10f9248857804437f5.png",
     "static/media/burger-bot.png": "./static/media/burger-bot.623aa3242d4551ffa91d.png",
     "static/media/bulgari.png": "./static/media/bulgari.7c3215914865130e4bda.png",
+    "static/media/tobias-etchelet-4.png": "./static/media/tobias-etchelet-4.b9c7eb7d01a95b0a8209.png",
     "static/media/project2.jpg": "./static/media/project2.e09465989dd46b512ae9.jpg",
     "static/media/Logo-Neorelax-2048x695-1.png": "./static/media/Logo-Neorelax-2048x695-1.5c89bc05020423d8f0e6.png",
     "static/media/project1.jpg": "./static/media/project1.c14e4b3a988fcaa69380.jpg",
-    "index.html": "./index.html"
+    "index.html": "./index.html",
+    "main.33ef2be2.css.map": "./static/css/main.33ef2be2.css.map",
+    "main.83cf7543.js.map": "./static/js/main.83cf7543.js.map",
+    "453.3ea09d55.chunk.js.map": "./static/js/453.3ea09d55.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d84ec46.css",
-    "static/js/main.c7a4b3ea.js"
+    "static/css/main.33ef2be2.css",
+    "static/js/main.83cf7543.js"
   ]
 }

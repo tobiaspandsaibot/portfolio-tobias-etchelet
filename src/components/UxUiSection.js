@@ -12,9 +12,9 @@ const UxUiSection = () => {
   const projects = [
     {
       id: 1,
-      title: getTranslation('project1Title'),
-      description: getTranslation('project1Description'),
-      tech: getTranslation('project1Tech').split(','),
+      title: getTranslation('uxuiProject1Title'),
+      description: getTranslation('uxuiProject1Description'),
+      tech: getTranslation('uxuiProject1Tech').split(','),
       link: 'https://www.figma.com/proto/trUqjo2lR2L4imHRq2zdxg/BULGARI?type=design&node-id=2-104&t=Njlt4884jBwx21Vo-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=4%3A2',
       year: '2023',
       image: bulgariImage,
@@ -22,9 +22,9 @@ const UxUiSection = () => {
     },
     {
       id: 2,
-      title: getTranslation('project2Title'),
-      description: getTranslation('project2Description'),
-      tech: getTranslation('project2Tech').split(','),
+      title: getTranslation('uxuiProject2Title'),
+      description: getTranslation('uxuiProject2Description'),
+      tech: getTranslation('uxuiProject2Tech').split(','),
       link: 'https://xd.adobe.com/view/5f9f6f8d-9cda-47aa-89fb-b1e02c8d84dd-0acc/?fullscreen&hints=off',
       year: '2022',
       image: burgerBotsImage,

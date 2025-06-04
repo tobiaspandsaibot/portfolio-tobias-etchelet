@@ -16,9 +16,9 @@
 - [x] Traducir el título "Software" y unificar su estilo con el de "Educación".
 
 ### 📦 Otros Textos
-- [ ] Traducir los botones "Ver Proyecto" en la sección "Projects".
-- [ ] Corregir traducción incorrecta de "Kindergarten" en la sección de proyectos.
-- [ ] Traducir completamente al inglés el contenido dentro de la sección "Diseños UX/UI".
+- [x] Traducir los botones "Ver Proyecto" en la sección "Projects".
+- [x] Corregir traducción incorrecta de "Kindergarten" en la sección de proyectos.
+- [x] Traducir completamente al inglés el contenido dentro de la sección "Diseños UX/UI".
 
 ## 🧱 Estructura HTML
 
@@ -28,21 +28,21 @@
 ## 🧑‍💻 UI/UX Detalles
 
 ### 🧠 Accordion de AI Tools
-- [ ] Agregar bullet points (`•`) dentro de cada elemento del acordeón de AI Tools para listar herramientas.
+- [x ] Agregar bullet points (`•`) dentro de cada elemento del acordeón de AI Tools para listar herramientas.
 
 ### 📑 Sidebar Component
-- [ ] Corregir los botones traducidos al inglés para que inicien con **mayúscula**.
+- [x] Corregir los botones traducidos al inglés para que inicien con **mayúscula**.
 
 ## 🧱 Estructura HTML
 
 ### 🏗️ Reorganización de Contenedores
-- [ ] Mover el título de la sección "Experiencia" fuera del `div` contenedor donde se encuentra actualmente.
+- [ x] Mover el título de la sección "Experiencia" fuera del `div` contenedor donde se encuentra actualmente.
 
 ## 🧑‍💻 UI/UX Detalles
 
 ### 🧠 Accordion de AI Tools
-- [ ] Agregar bullet points (`•`) dentro de cada elemento del acordeón de AI Tools para listar herramientas.
+- [x] Agregar bullet points (`•`) dentro de cada elemento del acordeón de AI Tools para listar herramientas.
 
 ### 📑 Sidebar Component
-- [ ] Corregir los botones traducidos al inglés para que inicien con **mayúscula**.
+- [x] Corregir los botones traducidos al inglés para que inicien con **mayúscula**.
 

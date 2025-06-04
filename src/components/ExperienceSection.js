@@ -33,34 +33,20 @@ const ExperienceSection = () => {
       responsibilities: getTranslation('experience3Responsibilities').split(',')
     },
     {
-      title: 'Productor / Jefe de Depósito',
-      company: 'BAM EVENT PLANNERS',
-      period: 'Enero 2014 – Octubre 2015 (1 año 10 meses)',
-      location: 'Argentina',
-      description: 'Organización de eventos corporativos y sociales (coordinación, producción, logística y montajes).',
-      responsibilities: [
-        'Pre-organización y logística de ambientaciones y estructuras.',
-        'Realización de presentaciones en PowerPoint para clientes.',
-        'Asistencia en producción durante eventos.',
-        'Coordinación con actores y artistas.',
-        'Supervisión de seguridad en depósito y eventos.',
-        'Logística de montajes y desmontajes.',
-        'Realización de seguros RSA para eventos y promociones en vía pública.'
-      ]
+      title: getTranslation('experience4Title'),
+      company: getTranslation('experience4Company'),
+      period: getTranslation('experience4Period'),
+      location: getTranslation('experience4Location'),
+      description: getTranslation('experience4Description'),
+      responsibilities: getTranslation('experience4Responsibilities').split(',')
     },
     {
-      title: 'Asistente Administrativo Sénior',
-      company: 'Shimano Latin America Representación Comercial Ltda.',
-      period: 'Mayo 2013 – Octubre 2014 (1 año 6 meses)',
-      location: 'Argentina',
-      description: '',
-      responsibilities: [
-        'Control de stock de muestras de mercadería.',
-        'Gestión de pagos a proveedores, cobranzas y tareas bancarias.',
-        'Elaboración de presupuestos y presentaciones.',
-        'Manejo de caja chica para distintos departamentos.',
-        'Control de gastos post eventos.'
-      ]
+      title: getTranslation('experience5Title'),
+      company: getTranslation('experience5Company'),
+      period: getTranslation('experience5Period'),
+      location: getTranslation('experience5Location'),
+      description: getTranslation('experience5Description'),
+      responsibilities: getTranslation('experience5Responsibilities').split(',')
     }
   ];
 
