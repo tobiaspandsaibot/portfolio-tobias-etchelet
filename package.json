@@ -1,7 +1,7 @@
 {
   "name": "portfolio-tobias",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://tobiaspandsaibot.github.io/portfolio-tobias-etchelet",
   "private": true,
   "resolutions": {
     "nth-check": "^2.0.1",
