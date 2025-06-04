@@ -28,5 +28,8 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build
-          branch: gh-pages
+          branch: main  # Cambiamos a la rama main del repositorio de GitHub Pages
+          repository: tobiaspandsaibot/tobiaspandsaibot.github.io  # Repositorio de GitHub Pages
           clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target-folder: .  # Desplegar en la raíz del repositorio
