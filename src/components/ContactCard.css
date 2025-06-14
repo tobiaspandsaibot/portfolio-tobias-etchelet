@@ -82,6 +82,7 @@ a.contact-value:hover {
 @media (max-width: 480px) {
   .contact-card {
     padding-top: 100px !important;
+   padding-bottom: 100px !important;
   }
 }
 

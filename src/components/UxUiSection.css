@@ -127,6 +127,13 @@
     width: 200% !important;
 }
 
+.codepen-image{
+    object-fit: contain;
+    padding: 0px;
+    background-color: #191925;
+    width: 200% !important;
+}
+
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;

@@ -27,7 +27,7 @@ const ProjectsSection = () => {
       title: getTranslation('project2Title'),
       description: getTranslation('project2Description'),
       tech: getTranslation('project2Tech').split(','),
-      link: 'https://sns-website.vercel.app/',
+      link: 'https://www.linkedin.com/company/sp-saibot',
       year: '2024',
       image: snsImage,
       className: 'sns-image'
@@ -47,7 +47,7 @@ const ProjectsSection = () => {
       title: getTranslation('project4Title'),
       description: getTranslation('project4Description'),
       tech: getTranslation('project4Tech').split(','),
-      link: 'https://www.sns.com.ar/',
+      link: 'https://sgastronomicas.com.ar/',
       year: '2024',
       image: project2Image,
       className: 'sns-image'
@@ -57,7 +57,7 @@ const ProjectsSection = () => {
       title: getTranslation('project5Title'),
       description: getTranslation('project5Description'),
       tech: getTranslation('project5Tech').split(','),
-      link: 'https://www.linkedin.com/company/babz-llc/',
+      link: 'https://eljardindelaplaza.edu.ar//',
       year: '2024',
       image: project1Image,
       className: 'babz-image'
@@ -67,7 +67,7 @@ const ProjectsSection = () => {
       title: getTranslation('project6Title'),
       description: getTranslation('project6Description'),
       tech: getTranslation('project6Tech').split(','),
-      link: 'https://clazzical-production.up.railway.app/',
+      link: 'https://clazzicalskateboarding.empretienda.com.ar/',
       year: '2024',
       image: clazzicalImage,
       className: 'babz-image'

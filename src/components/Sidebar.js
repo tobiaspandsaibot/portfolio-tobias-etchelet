@@ -46,7 +46,7 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="sidebar glass-card" ref={sidebarRef}>
+    <div className="sidebar" ref={sidebarRef}>
       <div className="profile">
         <div className="avatar">
           <a href="#dashboard-container">
@@ -71,24 +71,30 @@ const Sidebar = () => {
               <FiCode /> {getTranslation('software')}
             </a>
           </li>
-          <div className="nav-links">
-            <a href="#about-me" className="nav-link">
-              <FiActivity className="nav-icon" />
-              <span> {getTranslation('about_me')}</span>
-            </a>
-            <a href="#experience" className="nav-link">
-              <FiBriefcase className="nav-icon" />
-              <span> {getTranslation('experience')}</span>
-            </a>
-            <a href="#education" className="nav-link">
-              <FiCode className="nav-icon" />
-              <span> {getTranslation('education')}</span>
-            </a>
-            <a href="#ai-tools" className="nav-link">
-              <FiZap className="nav-icon" />
-              <span> {getTranslation('ai_tools')}</span>
-            </a>
-          </div>
+          <li>
+      <a href="#about-me" className="nav-link">
+        <FiActivity className="nav-icon" />
+        <span> {getTranslation('about_me')}</span>
+      </a>
+    </li>
+    <li>
+      <a href="#experience" className="nav-link">
+        <FiBriefcase className="nav-icon" />
+        <span> {getTranslation('experience')}</span>
+      </a>
+    </li>
+    <li>
+      <a href="#education" className="nav-link">
+        <FiCode className="nav-icon" />
+        <span> {getTranslation('education')}</span>
+      </a>
+    </li>
+    <li>
+      <a href="#ai-tools" className="nav-link">
+        <FiZap className="nav-icon" />
+        <span> {getTranslation('ai_tools')}</span>
+      </a>
+    </li>
           <li>
             <a href="#projects">
               <FiCode /> {getTranslation('projects')}

@@ -38,3 +38,10 @@
 .language-button:active {
   transform: scale(0.95);
 }
+
+@media (max-width: 480px) {
+  .language-button {
+    width: 25px;
+    height: 25px;
+  }
+}

@@ -93,6 +93,7 @@
 @media (max-width: 480px) {
   .contact-section {
     padding: 12px;
+    margin-bottom: 30vh;
   }
 
   .social-link {

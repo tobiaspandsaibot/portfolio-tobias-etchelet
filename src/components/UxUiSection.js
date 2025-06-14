@@ -5,7 +5,10 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 // Importar imágenes (asegúrate de que existan en la carpeta assets)
 import bulgariImage from '../assets/bulgari.png';
-import burgerBotsImage from '../assets/burger-bot.png';
+import burgerBotsImage  from '../assets/burger-bot.png'; 
+import codepenImage  from '../assets/codepen-image.png';
+
+
 
 const UxUiSection = () => {
   const { getTranslation } = useLanguage();
@@ -30,6 +33,19 @@ const UxUiSection = () => {
       image: burgerBotsImage,
       className: 'burger-bots-image'
     }
+    ,
+    {
+      id: 3,
+      title: getTranslation('uxuiProject3Title'),
+      description: getTranslation('uxuiProject3Description'),
+      tech: getTranslation('uxuiProject3Tech').split(','),
+      link: 'https://codepen.io/tobias-spandsaibot/pens/popular',
+      year: '2024',
+      image: codepenImage,
+      className: 'codepen-image'
+    }  
+
+
   ];
 
   return (
